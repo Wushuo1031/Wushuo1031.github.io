@@ -1,0 +1,1476 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s3.bmp.ovh/imgs/2021/11/b7bb13bb1ccf4890.png">
+  <link rel="icon" href="https://s3.bmp.ovh/imgs/2021/11/b7bb13bb1ccf4890.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="10m*12个 00.乱七八糟答题思路：概念，优缺点，用法，使用场景 构造函数：用来实例化对象 Vue-admin-template 适合二次开发 不需要路由，可复用的组件 放 components 需要路由的组件，放到views 自定义ESlint规则 放到 .eslintrc.js 文件的 rules对象下 -S 开发和生产环境都需要 -D 只在开发阶段写代码时会用到 axios.create">
+<meta property="og:type" content="article">
+<meta property="og:title" content="时间笔记">
+<meta property="og:url" content="http://example.com/2021/11/04/%E6%97%B6%E9%97%B4%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="人生若只如初见 | WuChangShuo">
+<meta property="og:description" content="10m*12个 00.乱七八糟答题思路：概念，优缺点，用法，使用场景 构造函数：用来实例化对象 Vue-admin-template 适合二次开发 不需要路由，可复用的组件 放 components 需要路由的组件，放到views 自定义ESlint规则 放到 .eslintrc.js 文件的 rules对象下 -S 开发和生产环境都需要 -D 只在开发阶段写代码时会用到 axios.create">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211024200009147.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211029001346334.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211020123939497.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211031142716627.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211031142333909.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210905001848032.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210905213656666.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210912162421077.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210912173426616.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210911112801623.png">
+<meta property="og:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210913235651852.png">
+<meta property="article:published_time" content="2021-11-04T03:58:09.000Z">
+<meta property="article:modified_time" content="2021-11-04T13:42:10.135Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211024200009147.png">
+  
+  <title>时间笔记 - 人生若只如初见 | WuChangShuo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":190,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>武硕の小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/guimie.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="时间笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-04 11:58" pubdate>
+        2021年11月4日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      31k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      98 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">时间笔记</h1>
+            
+            <div class="markdown-body">
+              <p>10m*12个</p>
+<h4 id="00-乱七八糟"><a href="#00-乱七八糟" class="headerlink" title="00.乱七八糟"></a><strong>00.乱七八糟</strong></h4><p>答题思路：概念，优缺点，用法，使用场景</p>
+<p>构造函数：用来实例化对象</p>
+<p>Vue-admin-template 适合二次开发</p>
+<p>不需要路由，可复用的组件 放 components</p>
+<p><strong>需要路由</strong>的组件，放到views</p>
+<p>自定义ESlint规则 放到 .eslintrc.js 文件的 rules对象下</p>
+<p>-S 开发和生产环境都需要</p>
+<p>-D 只在开发阶段写代码时会用到</p>
+<p>axios.create 创建实例</p>
+<p>响应拦截器：主要处理 返回的**<code>数据异常</code>** 和**<code>数据结构</code>**问题    来自：基础环境搭建</p>
+<p>refresh token 续命陶肯</p>
+<p>在CSS中用@需要加小虫</p>
+<p>vue项目中的style加上scoped后是局部样式</p>
+<p>if 存在  else 不存在</p>
+<p>router-view 二级路由挂载点</p>
+<p>Mutation 的自定义方法 第一个形参是state，第二个形参是自定义的</p>
+<p>AXios是一个基于promise的HTTP库，简单来讲就是可以发送get,post请求，可以用在浏览器和nodejs中<br>可以进行的操作有，发送请求，请求拦截器，相应拦截器，取消请求等。<br>底层使用的还是XMLHTTP</p>
+<p>export default 下的 components 是用来注册子组件的</p>
+<p>Vue框架更新DOM的过程是异步的</p>
+<p>Vant有赞组件库可以主题定制-拉到最下边：<a target="_blank" rel="noopener" href="https://vant-contrib.gitee.io/vant/#/zh-CN/theme">https://vant-contrib.gitee.io/vant/#/zh-CN/theme</a></p>
+<p>vue中axios的封装以及简单使用：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shenjianping/p/11448247.html">https://www.cnblogs.com/shenjianping/p/11448247.html</a></p>
+<p>Lazyload 懒加载 vant有赞自带 懒加载</p>
+<p>组件导入：按需导入有引号 全局没有</p>
+<p>router-link 本质是a标签</p>
+<p>$route 传参       $router 调方法</p>
+<p>前端将对象数据处理成JSON字符串（JSON.stringify）</p>
+<p>阿贾克斯，异步的</p>
+<p>环境变量，在.env.development中配置</p>
+<p>捕获async await 异常，需要用到 <strong>try  catch</strong>  语句</p>
+<p>当账号密码输入正确，系统log提示错误的时候，检查参数是否写对，传对</p>
+<p>dispatch是异步的，需要加await 同步化</p>
+<p>vmodu快速打出vuex</p>
+<p><strong>eslint加规则</strong>，打开报错链接，复制标题，在eslint配置文件中添加，”vue/html-indent”: “off”,  “规则名”: “off”,</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuxinyu/p/14673447.html">router-view的key属性的作用</a></p>
+<p>因为Vue会有组件之间的复用，如果两个路由都使用到了某一个组件，这个组件是不会再去执行created和mounted这些钩子函数的，加了key就是可以当成两个不同的界面去使用。</p>
+<p>ctrl+shift+K 删除整行</p>
+<p>handleClose 是控制弹层叉号的</p>
+<p>有Token报401错误 看request请求头</p>
+<p>数据盒子纵向纵列排序：display: flex; flex-flow: column; flex-wrap: wrap;</p>
+<p>退出登录的提示弹层在messagebox做</p>
+<p>对象合并，展开运算符+解构放进去</p>
+<p>Git bash图形化操作  mkdir 批量创建文件夹   touch 批量创建文件</p>
+<p>弹层组件放在最后一个div根元素之前</p>
+<p>枚举类型：可遍历的数据类型（数组，对象），里边一个一个的数组就是<strong>数据字典</strong></p>
+<p>COS云服务器对象存储：设置cors规则跨域，安全管理-跨域访问，来源设置为*，星的意思是指任何来源都可以访问</p>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211024200009147.png" srcset="/img/loading.gif" lazyload alt="image-20211024200009147"></p>
+<p>敏感操作，提示框 =》 this.$confirm(‘确认删除吗’, ‘提示’)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">this</span>.$confirm(<span class="hljs-string">&#x27;确认删除吗&#x27;</span>, <span class="hljs-string">&#x27;提示&#x27;</span>).then(<span class="hljs-function">() =&gt;</span> &#123;<br><br>&#125;).catch(<span class="hljs-built_in">console</span>.log)<br></code></pre></td></tr></table></figure>
+
+<p>清空表单（只能清除添加了校验的数据） =》  this.$refs.表单名.resetFields()</p>
+<p>三元表达式动态显示标题 =》      :title=”formData.id ? ‘编辑权限’ : ‘新增权限’”</p>
+<p>拆分组件，模块化组件，不能加.sync  因为违反了单向数据流  如果dialog直接放进去不封装可以加 :visible.sync</p>
+<p>mounted发请求可能会闪一下，科瑞踢德不会，因为mounted是先加载完DOM，在请求数据</p>
+<p>maxin可以全局注册一个方法，写完需要在main.js引入注册  1.import ckp from ‘@/utils/mixin’      2. Vue.mixin(ckp)</p>
+<p>Echas图表，的CSS必须要给宽高</p>
+<p>Vue往<strong>原型链上挂东西</strong>，人力练习项目utils文件夹-echas.js   Vue.phototype.echarts = echarts   注册完需要在min.js导入</p>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211029001346334.png" srcset="/img/loading.gif" lazyload alt="image-20211029001346334"></p>
+<p>mixin和往<strong>原型链上挂东西</strong> 都可以定义全局公共方法JS</p>
+<p>&amp;&amp; 需要两边都是true 才返回 true  有一个是false结果也是false             秘籍：都为真 才是真</p>
+<p>|| 两边 只要 有一个是正确的 则返回 true   两个都为假 结果才是false     秘籍：都为假 才是假</p>
+<p>给input框 添加 一进入页面就获取焦点：第一行代码： const ipt = document.querySelector(‘input’)               第二行代码：  ipt.focus()</p>
+<p>this.data定义.length === 0  代表用户输入的空内容  头条 05-10</p>
+<p><strong>三元表达式食用方法：</strong></p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ada">条件表达式 ? 表达式<span class="hljs-number">1</span> : 表达式2<br><br>执行思路：如果条件表达式结果为<span class="hljs-literal">true</span>，则返回表达式<span class="hljs-number">1</span>的值，如果条件表达式结果为假，则返回表达式<span class="hljs-number">2</span>的值 <br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-说说你对盒子模型的理解"><a href="#1-说说你对盒子模型的理解" class="headerlink" title="1.说说你对盒子模型的理解"></a><strong>1.说说你对盒子模型的理解</strong></h4><p>盒子模型分为两种，一种是标准盒子模型，一种是怪异盒子模型。</p>
+<p>标准盒模型下盒子的大小 = content + border + padding + margin<br>（内容+边框+pending+马竞）</p>
+<p>怪异盒模型中的 宽 指的是内容、边框、内边距总的宽度；高 指的是内容、边框、内边距总的高度</p>
+<p>怪异盒模型下盒子的大小=width（content + border + padding） + margin</p>
+<h4 id="2-JS数组常用方法"><a href="#2-JS数组常用方法" class="headerlink" title="2.JS数组常用方法"></a><strong>2.JS数组常用方法</strong></h4><p><strong>Push，做添加新增功能的，向数组末尾一个或多个元素，并返回数组新的长度；</strong></p>
+<p><strong>Pop，删除数组最后一个元素，被删除的元素作为返回值返回；</strong></p>
+<p><strong>Unshift，向数组开头添加一个或多个元素，并返回数组新的长度；</strong></p>
+<p><strong>Shift，删除数组第一个元素，被删除的元素作为返回值返回；</strong></p>
+<p><strong>splice，做删除功能的，删除数组中一个或连续的元素，而且可以再删除位置添加新的元素，删除的元素作为返回值返回；</strong></p>
+<p><strong>concat，合并多个数组，并返回一个新数组；</strong></p>
+<p><strong>indexOf，返回置顶元素在数组中第一次出现的位置；</strong></p>
+<p><strong>forEach，接受一个函数作为参数，遍历数组时，所有数组成员依次执行该函数，中途不可停止。</strong></p>
+<p><strong>filter，数组过滤方法</strong></p>
+<p>数组基本操作可以归纳为 增删改查 。</p>
+<p>增  前三个会影响原数组，第四个不会。</p>
+<p>push()方法接收任意数量的参数，并将它们添加到数组末尾，返回数组的最新长度</p>
+<p>unshift()在数组开头添加任意多个值，然后返回新的数组长度</p>
+<p>splice() 传入三个参数，分别是开始位置、0（要删除的元素数量）、插入的元素，返回空数组</p>
+<p>concat() 首先会创建一个当前数组的副本，然后再把它的参数添加到副本末尾，最后返回这个新构建的数组，不会影响原始数组</p>
+<p>删 下面三种都会影响原数组，最后一项不影响原数组</p>
+<p>pop() 方法用于删除数组的最后一项，同时减少数组的 length 值，返回被删除的项</p>
+<p>shift()方法用于删除数组的第一项，同时减少数组的 length 值，返回被删除的项</p>
+<p><strong>splice</strong>() 传入两个参数，分别是开始位置，删除元素的数量，返回包含删除元素的数组  <strong>常被用作删除功能</strong></p>
+<p>slice()  用于创建一个包含原有数组中一个或多个元素的新数组，不会影响原始数组</p>
+<p>改 splice() 传入三个参数，分别是开始位置，要删除元素的数量，要插入的任意多个元素，返回删除元素的数组，对原数组产生影响</p>
+<p>查 </p>
+<p>indexOf() 返回要查找的元素在数组中的位置，如果没找到则返回-1</p>
+<p><strong>includes()</strong> 查找数据中存 不存在 这个值，找到返回true，否则false</p>
+<p>find() 返回第一个匹配的元素</p>
+<ul>
+<li><p><strong>创建一个新数组，新数组是b项的值，而且需要去重。</strong></p>
+</li>
+<li><p>```js</p>
+<pre><code>let res = [
+  &#123; a: &#39;1&#39;, b: &#39;2&#39;, c: &#39;3&#39; &#125;,
+  &#123; a: &#39;21&#39;, b: &#39;2res&#39;, c: &#39;j&#39; &#125;,
+  &#123; a: &#39;31&#39;, b: &#39;2res&#39;, c: &#39;3j&#39; &#125;,
+  &#123; a: &#39;15&#39;, b: &#39;2r&#39;, c: &#39;3re&#39; &#125;,
+  &#123; a: &#39;61&#39;, b: &#39;2r&#39;, c: &#39;3ers&#39; &#125;,
+]
+
+console.log(new Set(res.map((w) =&gt; w.b)))
+
+    // 结果是 Set(3) &#123;&quot;2&quot;, &quot;2res&quot;, &quot;2r&quot;&#125;
+</code></pre>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs clean"><br>  <br><br>**split()方法 把字符转转换为数组**<br><br>reverse() 方法 翻转世界 颠倒数组顺序<br><br>#### **<span class="hljs-number">3.</span>JS字符串的常用方法有哪些？**<br><br>**includes，查找字符串是否包含 <span class="hljs-string">&quot;Runoob&quot;</span>**<br><br>```js<br><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Hello world, welcome to the Runoob。&quot;</span>;<br><span class="hljs-keyword">let</span> res = str.includes(<span class="hljs-string">&quot;world&quot;</span>);<br><br><span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>我们也可将字符串常用的操作方法归纳为增、删、改、查，需要知道的是字符串的特点是一旦创建了，就不可变。</p>
+<p><strong>增</strong></p>
+<p>concat</p>
+<p>用于将一个或多个字符串拼接成一个新字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> niu = <span class="hljs-string">&quot;hello &quot;</span>;<br><span class="hljs-keyword">let</span> bi = niu.concat(<span class="hljs-string">&quot;world&quot;</span>);<br><span class="hljs-built_in">console</span>.log(niu); <span class="hljs-comment">// &quot;hello world&quot;</span><br><span class="hljs-built_in">console</span>.log(bi); <span class="hljs-comment">// &quot;hello&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>删</strong></p>
+<p>这里的删的意思并不是说删除原字符串的内容，而是创建字符串的一个副本，再进行操作</p>
+<p>常见的有：</p>
+<ul>
+<li>slice()</li>
+<li>substr()</li>
+<li>substring()</li>
+</ul>
+<p>这三个方法都返回调用它们的字符串的一个子字符串，而且都接收一或两个参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> stringValue = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-built_in">console</span>.log(stringValue.slice(<span class="hljs-number">3</span>)); <span class="hljs-comment">// &quot;lo world&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.substring(<span class="hljs-number">3</span>)); <span class="hljs-comment">// &quot;lo world&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.substr(<span class="hljs-number">3</span>)); <span class="hljs-comment">// &quot;lo world&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.slice(<span class="hljs-number">3</span>, <span class="hljs-number">7</span>)); <span class="hljs-comment">// &quot;lo w&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.substring(<span class="hljs-number">3</span>,<span class="hljs-number">7</span>)); <span class="hljs-comment">// &quot;lo w&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.substr(<span class="hljs-number">3</span>, <span class="hljs-number">7</span>)); <span class="hljs-comment">// &quot;lo worl&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>改</strong></p>
+<p>这里改的意思也不是改变原字符串，而是创建字符串的一个副本，再进行操作</p>
+<p>常见的有：</p>
+<ul>
+<li>trim()、trimLeft()、trimRight()</li>
+<li>repeat()</li>
+<li>padStart()、padEnd()</li>
+<li>toLowerCase()、 toUpperCase()</li>
+</ul>
+<p><strong>trim()、trimLeft()、trimRight()</strong></p>
+<p>删除前、后或前后所有空格符，再返回新的字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> niu = <span class="hljs-string">&quot; hello world &quot;</span>;<br><span class="hljs-keyword">let</span> bi = niu.trim();<br><span class="hljs-built_in">console</span>.log(niu); <span class="hljs-comment">// &quot; hello world &quot;</span><br><span class="hljs-built_in">console</span>.log(bi); <span class="hljs-comment">// &quot;hello world&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>repeat()</strong></p>
+<p>接收一个整数参数，表示要将字符串复制多少次，然后返回拼接所有副本后的结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> stringValue = <span class="hljs-string">&quot;na &quot;</span>;<br><span class="hljs-keyword">let</span> copyResult = stringValue.repeat(<span class="hljs-number">2</span>) <span class="hljs-comment">// na na </span><br></code></pre></td></tr></table></figure>
+
+<p><strong>padEnd()</strong></p>
+<p>复制字符串，如果小于指定长度，则在相应一边填充字符，直至满足长度条件，写什么填充什么</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> stringValue = <span class="hljs-string">&quot;foo&quot;</span>;<br><span class="hljs-built_in">console</span>.log(stringValue.padStart(<span class="hljs-number">6</span>)); <span class="hljs-comment">// &quot; foo&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.padStart(<span class="hljs-number">9</span>, <span class="hljs-string">&quot;.&quot;</span>)); <span class="hljs-comment">// &quot;......foo&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>toLowerCase()、 toUpperCase()</strong></p>
+<p>大小写转化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> stringValue = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-built_in">console</span>.log(stringValue.toUpperCase()); <span class="hljs-comment">// &quot;HELLO WORLD&quot;</span><br><span class="hljs-built_in">console</span>.log(stringValue.toLowerCase()); <span class="hljs-comment">// &quot;hello world&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>查</strong></p>
+<p>除了通过索引的方式获取字符串的值，还可通过：</p>
+<ul>
+<li>chatAt()</li>
+<li>indexOf()</li>
+<li>startWith()</li>
+<li>includes()</li>
+</ul>
+<p><strong>charAt()</strong></p>
+<p>返回给定索引位置的字符，由传给方法的整数参数指定</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> message = <span class="hljs-string">&quot;abcde&quot;</span>;<br><span class="hljs-built_in">console</span>.log(message.charAt(<span class="hljs-number">2</span>)); <span class="hljs-comment">// &quot;c&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>indexOf()</strong></p>
+<p>从字符串开头去搜索传入的字符串，并返回位置（如果没找到，则返回 -1 ）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> stringValue = <span class="hljs-string">&quot;hello world&quot;</span>;<br><span class="hljs-built_in">console</span>.log(stringValue.indexOf(<span class="hljs-string">&quot;o&quot;</span>)); <span class="hljs-comment">// 4</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>startWith()、includes()</strong></p>
+<p>从字符串中搜索传入的字符串，并返回一个表示是否包含的布尔值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> message = <span class="hljs-string">&quot;foobarbaz&quot;</span>;<br><span class="hljs-built_in">console</span>.log(message.startsWith(<span class="hljs-string">&quot;foo&quot;</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-built_in">console</span>.log(message.startsWith(<span class="hljs-string">&quot;bar&quot;</span>)); <span class="hljs-comment">// false</span><br><span class="hljs-built_in">console</span>.log(message.includes(<span class="hljs-string">&quot;bar&quot;</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-built_in">console</span>.log(message.includes(<span class="hljs-string">&quot;qux&quot;</span>)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="4-和-区别，分别在什么情况使用？"><a href="#4-和-区别，分别在什么情况使用？" class="headerlink" title="4.== 和 ===区别，分别在什么情况使用？"></a>4.<strong>== 和 ===区别，分别在什么情况使用？</strong></h4><p>相等操作符（==），全等操作符（===） </p>
+<p>JS中存在隐式转换，等于操作符（==）在比较中会先进行类型转换，再确定操作数是否相等。</p>
+<ul>
+<li>两个都为简单类型，字符串和布尔值都会转换成数值，再比较</li>
+<li>简单类型与引用类型比较，对象转化成其原始类型的值，再比较</li>
+<li>两个都为引用类型，则比较它们是否指向同一个对象</li>
+<li>null 和 undefined 相等</li>
+<li>存在 NaN 则返回 false</li>
+</ul>
+<p>全等操作符由 3 个等于号（ === ）表示，只有两个操作数在不转换的前提下相等才返回 <code>true</code>。即类型相同，值也需相同</p>
+<h4 id="5-深拷贝浅拷贝的区别？"><a href="#5-深拷贝浅拷贝的区别？" class="headerlink" title="5.深拷贝浅拷贝的区别？"></a><strong>5.深拷贝浅拷贝的区别？</strong></h4><p>JS中存在两大数据类型。</p>
+<p>基本类型数据保存在在栈内存中</p>
+<p>引用类型数据保存在堆内存中，引用数据类型的变量是一个指向堆内存中实际对象的引用，存在栈中</p>
+<p>就是假设B复制了我，当修改我时，看B是否会发生变化，如果B也跟着变了，说明这是浅拷贝，拿人手短，如果B没变，那就是深拷贝，自食其力。</p>
+<p>无论是使用扩展运算符(…)还是解构赋值，对于引用类型都是浅拷贝。所以在使用splice()、concat()、…对数组拷贝时，只有当数组内部属性值不是引用类型是，才能实现深拷贝。</p>
+<p>深拷贝代码：JSON.parse(JSON.stringify(数据名))</p>
+<h4 id="6-TCP为什么需要三次握手和四次挥手？"><a href="#6-TCP为什么需要三次握手和四次挥手？" class="headerlink" title="6.TCP为什么需要三次握手和四次挥手？"></a><strong>6.TCP为什么需要三次握手和四次挥手？</strong></h4><p><strong>三次握手</strong>是指建立一个TCP连接时，需要客户端和服务器总共发送3个包</p>
+<p>主要作用就是为了确认双方的接收能力和发送能力是否正常</p>
+<p><strong>四次挥手原因</strong></p>
+<p>服务端在收到客户端断开连接<code>Fin</code>报文后，并不会立即关闭连接，而是先发送一个<code>ACK</code>包先告诉客户端收到关闭连接的请求，只有当服务器的所有报文发送完毕之后，才发送<code>FIN</code>报文断开连接，因此需要四次挥手</p>
+<h4 id="7-cookie，localstorage，sessionstorage-的区别"><a href="#7-cookie，localstorage，sessionstorage-的区别" class="headerlink" title="7.cookie，localstorage，sessionstorage 的区别"></a><strong>7.cookie，localstorage，sessionstorage 的区别</strong></h4><p>1、生命周期：</p>
+<ul>
+<li>Cookie：可设置失效时间，否则默认为关闭浏览器后失效</li>
+<li>Localstorage:除非被手动清除，否则永久保存</li>
+<li>Sessionstorage：仅在当前网页会话下有效，关闭页面或浏览器后就会被清除</li>
+</ul>
+<p>2、存放数据：</p>
+<ul>
+<li>Cookie：4k 左右</li>
+<li>Localstorage 和sessionstorage：可以保存5M 的信息</li>
+</ul>
+<p>3、应用场景：</p>
+<ul>
+<li>从安全性来说，因为每次http请求都会携带cookie 信息，这样子浪费了带宽，所以cookie应该尽可能的少用。</li>
+<li>此外cookie 还需要指定作用域，不可以跨域调用，限制很多，但是用户识别用户登陆来说，cookie 还是比storage 好用。</li>
+<li>其他情况下可以用storage，localstorage可以用来在页面传递参数，sessionstorage 可以用来保存一些临时的数据，防止用户刷新页面后丢失了一些参数。</li>
+</ul>
+<h4 id="8-对HTML语义化标签的理解"><a href="#8-对HTML语义化标签的理解" class="headerlink" title="8.对HTML语义化标签的理解"></a><strong>8.对HTML语义化标签的理解</strong></h4><p> HTML5 语义化标签是指正确的标签包含了正确的内容，结构良好，便于阅读，比如nav 表示导航条，类似的还有article、header、footer 等等标签，使用语义化标签可以使搜索引擎的爬虫效果更好，易于seo优化。</p>
+<h4 id="9-H5-C3新属性"><a href="#9-H5-C3新属性" class="headerlink" title="9.H5.C3新属性"></a><strong>9.H5.C3新属性</strong></h4><ul>
+<li>Box-shadow 盒子阴影</li>
+<li>Box-radius 圆角边框</li>
+<li>css3选择器 last-child、nth-child</li>
+<li>渐变</li>
+<li>弹性盒flex</li>
+<li>过渡、动画、变形</li>
+</ul>
+<p>8 个语义元素header头部 section内容段落 footer脚部区域 aside nav导航部分 main文档的主体内容 article figure</p>
+<p>内容元素mark 高亮progress 进度</p>
+<p>新的表单控件calander date time email url search</p>
+<p>新的input 类型color date datetime datetime-local email</p>
+<p>移除过时标签big font frame frameset</p>
+<p>canvas 绘图，支持内联SVG。支持MathML</p>
+<p>多媒体audio video</p>
+<p>本地离线存储，把需要离线存储在本地的文件列在一个manifest 配置文件</p>
+<p>web 存储。localStorage、SessionStorage</p>
+<h4 id="10-ES6-的新增方法"><a href="#10-ES6-的新增方法" class="headerlink" title="10.ES6 的新增方法"></a><strong>10.ES6 的新增方法</strong></h4><ul>
+<li>新增声明命令 let 和 const</li>
+<li>模板字符串</li>
+<li>箭头函数</li>
+<li>ES6 允许在对象之中，直接写变量。</li>
+<li>promise <strong>是同步的</strong>  .then是<strong>异步的</strong></li>
+</ul>
+<h4 id="11-生命周期函数"><a href="#11-生命周期函数" class="headerlink" title="11.生命周期函数"></a><strong>11.生命周期函数</strong></h4><p>beforeCreate(创建前）created(创建后）beforeMounted(挂载前） mounted(挂载后）</p>
+<p>beforeUpdate（更新前） updated(更新后）beforeDestroy（销毁前） destroyed(销毁后)</p>
+<p>created和mounted区别？  // created拿不到DOM 是 undifand  mounted 可以成功拿到DOM</p>
+<ul>
+<li><p>beforeCreate 获取不到data数据 ，log返回的是undifand</p>
+</li>
+<li><p>如果要调用methods中的方法，或者操作data中的数据，最早，只能在**created()**中操作(发请求) </p>
+</li>
+<li><p>如果要通过某些插件操作页面上的DOM节点了，最早要在<strong>mounted</strong> 中才可以<strong>操作DOM</strong></p>
+</li>
+<li><p>只要执行完了<strong>mounted</strong>，就表示整个Vue实例已经初始化完毕了，此时组件已经脱离了创建阶段，进入到了运行阶段 </p>
+</li>
+<li><p>每次数据发生变化，都会执行<strong>beforeUpdate</strong>和<strong>updated</strong></p>
+</li>
+<li><p>得出结论：当执行<strong>beforeUpdate</strong>的时候，页面中的显示的数据，还是旧的，此时data数据是最新的，页面尚未和最新的数据保持同步 </p>
+</li>
+<li><p><strong>updated</strong>事件执行的时候，页面和data数据已经保持同步了。都是最新的</p>
+</li>
+<li><p><strong>我们可以发现父子组件在加载的时候，执行的先后顺序为父beforeCreate-&gt;父created-&gt;父beforeMount-&gt;子beforeCreate-&gt;子created-&gt;子beforeMount-&gt;子mounted-&gt;父mounted。</strong></p>
+</li>
+<li><p>mounted和created区别</p>
+</li>
+<li><p>created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。 </p>
+</li>
+<li><p>mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42698576/article/details/109109555">https://blog.csdn.net/qq_42698576/article/details/109109555</a></p>
+<h4 id="12-Ajax-的原理"><a href="#12-Ajax-的原理" class="headerlink" title="12.Ajax 的原理"></a><strong>12.Ajax 的原理</strong></h4><p>通过 XmlHTTPRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 javascript 来 操作 DOM 而更新页面。</p>
+<h4 id="13-V-for和V-if不能连用？"><a href="#13-V-for和V-if不能连用？" class="headerlink" title="13.V-for和V-if不能连用？"></a><strong>13.V-for和V-if不能连用？</strong></h4><ul>
+<li>涉及到优先级问题，V-for会比V-if有优先执行</li>
+<li>如果每一次都需要遍历整个数组，将会影响速度</li>
+</ul>
+<h4 id="14-MVVM是什么？"><a href="#14-MVVM是什么？" class="headerlink" title="14.MVVM是什么？"></a><strong>14.MVVM是什么？</strong></h4><p>是一种架构设计模式，也就是数据驱动视图，其中M代表数据模型，V代表视图，VM代表的就是视图模型。</p>
+<ul>
+<li>M：   model数据模型            (data里定义)    </li>
+<li>V：    view视图                   （template里定义html页面结构）</li>
+<li>VM： ViewModel视图模型   (vue组件实例this)</li>
+</ul>
+<h4 id="15-同步和异步的区别"><a href="#15-同步和异步的区别" class="headerlink" title="15.同步和异步的区别"></a><strong>15.同步和异步的区别</strong></h4><p>先执行<strong>同步</strong>，后执行异步</p>
+<p>同步的思想是：所有的操作都做完，才返回给用户。</p>
+<p>异步：所有的操作同步执行。</p>
+<h4 id="16-宏任务和微任务"><a href="#16-宏任务和微任务" class="headerlink" title="16.宏任务和微任务"></a><strong>16.宏任务和微任务</strong></h4><p>先执行<strong>同步</strong>，后执行异步</p>
+<p>结论：微任务执行时机比宏任务早</p>
+<p>宏任务：定时器，seetInterval,DOM事件，阿贾克斯请求。</p>
+<p>微任务：Promise，async/await</p>
+<p>微任务》DOM渲染</p>
+<p><strong>任务队列</strong>里放的都是异步任务</p>
+<h4 id="17-vue中data为什么必须是函数"><a href="#17-vue中data为什么必须是函数" class="headerlink" title="17.vue中data为什么必须是函数"></a><strong>17.vue中data为什么必须是函数</strong></h4><p>vue中data必须是函数是为了保证组件的独立性和可复用性，data是一个函数，组件实例化的时候这个函数将会被调用，返回一个对象</p>
+<h4 id="18-Vue常用指令"><a href="#18-Vue常用指令" class="headerlink" title="18.Vue常用指令"></a><strong>18.Vue常用指令</strong></h4><ul>
+<li>v-bind 简写: 用于动态绑定数据例如 :src 可以绑定网址</li>
+<li>v-on 绑定点击事件的玩意</li>
+<li>v-model 主要在表单开发使用</li>
+<li>v-text 会显示标签内容  官方叫法：渲染字符串    <strong>注意</strong>：v-text和v-html标签内的内容会被data变量里的数据所覆盖</li>
+<li>v-html 会隐藏标签内容  官方叫法：既能渲染字符串，又能解析样式渲染出来</li>
+<li>v-show  v-秀是通过控制css的display：none来控制元素的显示隐藏</li>
+<li>v-if 是动态的向 DOM 树内添加或者删除 DOM 元素 控制JS 性能不好</li>
+<li>当需要在显示与隐藏之间切片很频繁时，使用v-show<br>当只有一次切换时，通过使用v-if</li>
+<li>v-for 用法：v-for=”自己起的名 in 数组名” :key=”key.id”      注意：key后边必须加.id.id.id.id.id.id.id.id<ul>
+<li>数组是下标，对象是key键</li>
+<li>调用数组方法：如果这个方法操作后改变了原数组，那么列表会自动刷新</li>
+<li>如果这个方法没有改变原数组，那么列表不会自动刷新</li>
+<li>如果遍历复杂类型（对象），需要这么写 <li v-for="自己起的名 in list2" :key="自己起的名.name"></li></li>
+<li>v-for添加key的作用：提高性能，标识渲染元素的唯一性，尽量少的操作DOM</li>
+<li>修改中的值的方法：this.$set(数组,数组的索引,数组修改的值)</li>
+</ul>
+</li>
+<li>在<strong>methods</strong>中，如果需要调用<strong>methods</strong>中<strong>已经定义的方法</strong>，需要加**this.**方法名</li>
+<li>@绑定的方法后边可以加（实参）</li>
+<li>methods里的方法第一个形参，可以打印出事件对象</li>
+<li>为什么要加e，可以解决输入时:value绑定变量数据同步</li>
+<li><strong>$event</strong>是指当前触发的是什么事件（鼠标事件，键盘事件等）</li>
+<li><strong>$event.target.value</strong> 是指当你触发input事件时，$event 是当前的事件对象。 $event.target.value指向的是当前的input的值。</li>
+<li>监听属性</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs vue">watch: &#123;<br>  要监听的属性名 (newVal, oldVal)&#123; // 当msg变量的值改变触发此函数<br>    console.log(newVal, oldVal);<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="19-v-on（-）事件修饰符"><a href="#19-v-on（-）事件修饰符" class="headerlink" title="19.v-on（@）事件修饰符"></a><strong>19.v-on（@）事件修饰符</strong></h4><p>.stop 阻止事件冒泡</p>
+<p>.prevent 阻止默认行为</p>
+<p>.once 程序运行期间，只出发一次事件处理函数</p>
+<p>.native 事件穿透（自定义组件绑定原生事件的时候）(比如键盘事件keyup)</p>
+<p>有默认行为的元素：form元素 a元素</p>
+<h4 id="20-v-model修饰符"><a href="#20-v-model修饰符" class="headerlink" title="20.v-model修饰符"></a><strong>20.v-model修饰符</strong></h4><p> .number 使用场景input 可以讲数字+字母的组合，转化为纯数字</p>
+<p>.trim 首位去除空格 一般用于输入账号密码上</p>
+<p>.lazy 懒加载 尽量让JS少的执行 提高性能 一般不用 除非有很多的表单时才使用</p>
+<p>添加功能：先给input绑定v-model，之后添加数组方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">this</span>.list.unshift(&#123;    <span class="hljs-attr">id</span>:<span class="hljs-built_in">Date</span>.now(),    <span class="hljs-attr">name</span>:<span class="hljs-built_in">this</span>.name,    <span class="hljs-attr">price</span>:<span class="hljs-built_in">this</span>.price,    <span class="hljs-attr">time</span>:<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()   &#125;)<br></code></pre></td></tr></table></figure>
+
+<h4 id="21-常用功能"><a href="#21-常用功能" class="headerlink" title="21.常用功能"></a><strong>21.常用功能</strong></h4><p><strong>增加添加功能：</strong>this.tableData(表格名).push(this.inputData)</p>
+<p><strong>删除功能</strong>：需要用到作用域插槽 参考文件 后台系统练习文件夹 employees-index.vue   this.list.splice(i, 1)</p>
+<p>1.用户确认 避免误删除  this.$confirm</p>
+<p>2.调用接口删除</p>
+<p>3.刷新列表       this.getlist()</p>
+<p><strong>编辑功能</strong>：数据回填+刷新列表 人资06-08</p>
+<p>删除功能的坑：删除按钮需要用 <template slot-scope="scope"> 插槽包起来才可以获取到index</p>
+<p><strong>全选反选功能</strong>，用!取反效果做  路径：基础-04-02</p>
+<p><strong>检测键盘回车事件</strong>： @keyup.enter</p>
+<p>删除接口的参数写在url路径上</p>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211020123939497.png" srcset="/img/loading.gif" lazyload alt="image-20211020123939497"></p>
+<h4 id="22-计算属性和监听属性有什么区别-computed和watch有什么区别"><a href="#22-计算属性和监听属性有什么区别-computed和watch有什么区别" class="headerlink" title="22.计算属性和监听属性有什么区别(computed和watch有什么区别)"></a><strong>22.计算属性和监听属性有什么区别(computed和watch有什么区别)</strong></h4><p>计算属性（computed）：根据data中的数据，计算出一个新的数据，应用场景（在模板中渲染显示）</p>
+<p>监听属性（watch）：只监听字符串的话，简单写法就行，监听对象等复杂数据类型，需要开启深度监听</p>
+<p>计算属性一进入组件就会执行，然后监听属性只有数据发生改变才会执行。</p>
+<p>计算属性有缓存，监听属性没有缓存，计算属性不支持异步，监听属性支持异步</p>
+<p>计算属性应用场景：计算价格，计算总价</p>
+<p>计算属性比methods计算性能要好，methods计算我试过会输出两次，而computed只会执行一次</p>
+<p>methods（买涩死）也没有缓存</p>
+<h4 id="23-组件注册"><a href="#23-组件注册" class="headerlink" title="23.组件注册"></a><strong>23.组件注册</strong></h4><p><strong>components</strong> 这个是组件注册的功能</p>
+<p>全局注册</p>
+<ul>
+<li>1.import 要注册的组件页面</li>
+<li>2.使用 Vue.component(‘TagName注册组件的标签名’,组件对象)</li>
+</ul>
+<p>局部注册</p>
+<ul>
+<li>1.在哪里用就在那里的sc标签import 导入       示范例：import zhedie from ‘../day01/折叠面板-练习.vue’</li>
+<li>2.用几把里里 components这个函数注册，格式为对象：</li>
+<li>components:{</li>
+<li>标签名：标签组件对象</li>
+<li>}     </li>
+</ul>
+<h4 id="24-组件通信"><a href="#24-组件通信" class="headerlink" title="24.组件通信"></a><strong>24.组件通信</strong></h4><p><strong>父传子用props</strong>：</p>
+<p>1.在父组件的<strong>子组件标签</strong>上&lt;Child :自己起的名=”数据名”&gt;</Child>        绑定一个V-band</p>
+<p>2.在 父组件data 下 定义要传的数据</p>
+<p>3.切换到子组件，子组件的export 括号下 定义一个props数组</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-comment">// 子组件页面</span><br><span class="hljs-symbol"></span><br><span class="hljs-symbol">  props:</span> &#123;<br>    <span class="hljs-comment">// 外边传给父部门的数据</span><br><span class="hljs-symbol">    currentNode:</span> &#123;<br><span class="hljs-symbol">      type:</span> Object,<br><span class="hljs-symbol">      default:</span> () =&gt; (&#123;&#125;)<br>    &#125;<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<p>4.之后就可以在div中，使用猴子语法绑定数据了。</p>
+<p>注意：父组件传给儿子的数据，是<strong>单向数据流</strong>，props是只读的，不能修改</p>
+<p><strong>子向父用this.$emit：</strong></p>
+<p>1.父组件操作：定义自定义事件 @xiugai=”chuan”</p>
+<p>2.子组件操作：绑定点击事件，使用 this.$emit(“父组件定义的自定义事件方法”, 任务(data里定义的名)名)    方法</p>
+<p><strong>兄弟组件传值</strong>：</p>
+<p>创建一个事件总线</p>
+<p>引入第三方 new vue 定义为 eventBus </p>
+<p>3.2）在组件中 created 中订阅方法 eventBus.$on(“自定义事件名”,methods 中的方法名) </p>
+<p>3.3) 在另一个兄弟组件中的 methods 中写函数，在函数中发布 eventBus 订阅的方法 eventBus.$emit(“自定义事件名”) </p>
+<p>3.4) 在组件的 template 中绑定事件(比如 click)</p>
+<p>1.新建eventBus.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vue()<br></code></pre></td></tr></table></figure>
+
+<p>2、Component1.vue里监听事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> eventBus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./eventBus&#x27;</span><br><span class="hljs-comment">//...</span><br>created () &#123;<br>  eventBus.$on(<span class="hljs-string">&#x27;my-event&#x27;</span>, <span class="hljs-function"><span class="hljs-params">args</span> =&gt;</span> &#123;<br>  <span class="hljs-comment">//...</span><br>  &#125;) <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>3、Component2.vue中触发事件</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">import</span> eventBus from <span class="hljs-string">&#x27;./eventBus&#x27;</span><br><span class="hljs-comment">//...</span><br>watch: <span class="hljs-type"></span>&#123;<br>  list(<span class="hljs-keyword">new</span><span class="hljs-type">Value</span>, oldValue) &#123;<br>    eventBus.$emit(<span class="hljs-string">&#x27;my-event&#x27;</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Value</span>)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="25-简单类型和复杂类型"><a href="#25-简单类型和复杂类型" class="headerlink" title="25.简单类型和复杂类型"></a><strong>25.简单类型和复杂类型</strong></h4><p>1.简单类型：string，number等  放到<strong>栈</strong>中</p>
+<p>2.复杂类型：函数，对象，数组     放到 堆中</p>
+<p>一句话总结： 简单栈，复杂堆，微宏工程师</p>
+<h4 id="26-Vue-配置文件配置"><a href="#26-Vue-配置文件配置" class="headerlink" title="26.Vue 配置文件配置"></a><strong>26.Vue 配置文件配置</strong></h4><p>规范错误不会出小黑框：lintOnSave:true</p>
+<h4 id="27-Axios"><a href="#27-Axios" class="headerlink" title="27.Axios"></a><strong>27.Axios</strong></h4><p>两种方式拿结果，第一种.then</p>
+<p>.then()方法是异步执行。</p>
+<p>url：接口地址</p>
+<p>method：请求类型</p>
+<p>第一种：<strong>async</strong> 写在 方法蓝色字体的前面 ， <strong>await</strong> 写在 等号的 后面</p>
+<p>第二种：<strong>async</strong>写在箭头函数圆括号的前边，<strong>await</strong>写在调接口的蓝色this前边</p>
+<h4 id="28-Vue生命周期"><a href="#28-Vue生命周期" class="headerlink" title="28.Vue生命周期"></a><strong>28.Vue生命周期</strong></h4><p>mounted钩子函数，可以操作DOM  这个也能发请求 不过比created慢</p>
+<p>created钩子函数，可以发请求</p>
+<p>Vue3取消了created，只能在mounted里发送</p>
+<h4 id="29-动态组件"><a href="#29-动态组件" class="headerlink" title="29.动态组件"></a><strong>29.动态组件</strong></h4> <component :is="dangqian" />
+
+<p>  &lt;button @click=”dangqian=’Dy1’”&gt;dy1</button></p>
+<p>  &lt;button @click=”dangqian=’Dy2’”&gt;dy2</button></p>
+<p>Keep-live 组件缓存后会多两个钩子函数 ： activated  deactivated 阿克地位踢德 滴阿克地位踢德</p>
+<h4 id="30-移动端适配"><a href="#30-移动端适配" class="headerlink" title="30.移动端适配"></a><strong>30.移动端适配</strong></h4><p>需要两个npm插件：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/cuth/postcss-pxtorem">postcss-pxtorem</a> 将 px 单位转化为 rem 单位</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/amfe/lib-flexible">lib-flexible</a> 用于动态设置 rem 基准值（随着屏幕的方法缩小，动态px）</li>
+</ul>
+<h4 id="31-Vue自定义指令"><a href="#31-Vue自定义指令" class="headerlink" title="31.Vue自定义指令"></a><strong>31.Vue自定义指令</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js">Vue.directive(<span class="hljs-string">&#x27;指令名&#x27;</span>,&#123;<br><br><span class="hljs-comment">//指令的逻辑</span><br><br><span class="hljs-function"><span class="hljs-title">inserted</span>(<span class="hljs-params">el</span>)</span>&#123;<br><br>el.style.color = <span class="hljs-string">&#x27;pink&#x27;</span><br><br>&#125;<br><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="32-Vue路由自学"><a href="#32-Vue路由自学" class="headerlink" title="32.Vue路由自学"></a><strong>32.Vue路由</strong>自学</h4><p>在router文件夹-index.js文件里进行配置</p>
+<p>1.导入页面</p>
+<p>2.往routes数组里加对象{path:’页面跳转路径’,component:组件对象}</p>
+<p>静态路由：没有访问限制的页面</p>
+<p>动态路由：需要权限才可以访问的页面</p>
+<p>链接导航：<router-link to="/home">首页</router-link></p>
+<p>this.$router.push() 作用：</p>
+<ul>
+<li><p><strong>this.$router.push() 可以通过修改url实现路由跳转。</strong></p>
+</li>
+<li><p><strong>this.$router.back() 可以实现返回上一页</strong></p>
+</li>
+<li><p>push 后面可以是对象，也可以是字符串：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jade">// 字符串 this.$router.push(&#x27;/home/first&#x27;)``<br>// 对象 this.$router.push(&#123; path: &#x27;/home/first&#x27; &#125;)``<br>// 命名的路由 this.$router.push(&#123; name: &#x27;home&#x27;, params: &#123; userId: wise &#125;&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>路由传参</strong>：动态路由可以通过冒号携带参数    使用场景：发请求，页面之间通信</p>
+<p><strong>接收路由传参</strong>：</p>
+<p>1、?形式的参数使用this.$route.query接收参数，结果是一个对象 </p>
+<p>2、:形式的参数使用this.$route.params接收参数，结果也是一个对象 </p>
+<ul>
+<li>query  <strong>/路径?a=xxx&amp;b=xxx</strong>       传：在router-link的 to 后边传  <strong>接收</strong>：created钩子函数接收 this.$route.query   完结了  刷新还在</li>
+<li><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211031142716627.png" srcset="/img/loading.gif" lazyload alt="image-20211031142716627"></li>
+<li>params啪若母传参 需要加上name    刷新没有了</li>
+<li><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20211031142333909.png" srcset="/img/loading.gif" lazyload alt="image-20211031142333909"></li>
+<li>用法1（路由文件）在path后边 加上 /:参数名1/:参数名2     （动态路由=&gt; 详情页）         使用场景：详情页面</li>
+<li>用法1（Vue文件） to后边写参数</li>
+<li><strong>接收</strong>：this.$route.params</li>
+</ul>
+<p>路由重定向：redirect:’/home’  这行代码代表 用户什么都不输入 跳转到首页</p>
+<p>路由404配置（记得导入404页面）：{</p>
+<p>path:’*’,</p>
+<p>component:NotFound</p>
+<p>}</p>
+<p><strong>切换路由模式</strong>：在实例化路由的对象下边，加一个mode属性，mode:’history’</p>
+<p><strong>编程式导航</strong>：this.$router.push()</p>
+<ul>
+<li>第一种用法 this.$router.push(‘/about’)      使用场景：可以用作按钮跳转</li>
+<li>第二种写法：对象模式  this.$router.push({ path: ‘/路径名’ })</li>
+<li>第三种写法： name  需要先去路由js页面的对象数组里，定义一个name 然后在需要的页面使用 this.$router.push({ name: ‘/起的name名’ })</li>
+<li>拓展：返回上级页面：不用加this，@click=”$router.back()”</li>
+<li>@click=”$router.go()” 什么都不传是刷新，传-1是返回上个页面</li>
+</ul>
+<p><strong>路由嵌套（配置二级路由）</strong></p>
+<ul>
+<li>导入所有的二级路由页面（index.js）</li>
+<li>找到父页面，在父页面对象下，写一个children:[{里边配置和正常一样，也是放一个对象}]  </li>
+<li>子路由的path为空或者和父路由的path一样，会默认加载渲染当前这个二级路由</li>
+<li>children:[{</li>
+<li>path:’/父path/子path’</li>
+<li>component:子路由名</li>
+<li>}]</li>
+<li>然后，放挂载点router-view标签 放到儿子的父页面</li>
+<li>之后，就可以使用router-link 加个 to 跳转了</li>
+</ul>
+<p>路由方法：router.replace</p>
+<h4 id="33-SPA单页面富应用"><a href="#33-SPA单页面富应用" class="headerlink" title="33.SPA单页面富应用"></a><strong>33.SPA单页面富应用</strong></h4><p>优点：用户体验好，开发效率高，静态资源共用，组件化开发，页面刷新时是局部刷新</p>
+<p>缺点：第一次打开速度慢，不利于SEO优化，需要通过SSR服务端渲染提高打开速度</p>
+<p><strong>头条登录功能</strong>：</p>
+<p>1.先拿到用户输入的数据 </p>
+<p>2.封装一个登录的API接口 </p>
+<p>3.async await 调用接口</p>
+<p>4.把token存储到本地（涉及知识点，本地存储；localStorage.setItem(‘token’, JSON.stringify(res.data) )</p>
+<p>5.跳转到首页</p>
+<p>6.把陶肯存储到Vuex中</p>
+<p>7.<strong>表单校验</strong>，用的饿了么UI内置的校验规则</p>
+<h4 id="34-人资项目关键点："><a href="#34-人资项目关键点：" class="headerlink" title="34.人资项目关键点："></a><strong>34.人资项目关键点：</strong></h4><p>静态路由：用户不需要权限判断都可以访问的</p>
+<p>动态路由：需要做权限控制的路由，用户如果权限不一致访问到的路由也不一样</p>
+<ul>
+<li>登录后，拿到权限点数据</li>
+<li>根据权限点数据，过滤动态路由  asyncRoutes.filter方法</li>
+<li>获取路由配置的name和登录人的menus数组中的值匹配     return points.menus.includes(route.children[0].name)  </li>
+<li>动态添加路由生效   router.addRoutes([…filterAsyncRoutes, { path: ‘*’, redirect: ‘/404’, hidden: true }])</li>
+</ul>
+<p><strong>1.登录功能</strong></p>
+<p><strong>HTML结构三大组成部分</strong>：el-form表单校验  el-form-item 表单项  el-button 提交按钮</p>
+<p>el-form-item 里的 prop是校验用的</p>
+<p><strong>绑定：</strong></p>
+<p>1.el-form绑定model属性/rules规则    :model绑定手机号密码的data数据     :rules 绑定的是校验规则</p>
+<p>2.el-form-item设置prop属性  prop属性设置的是手机号密码，也就是mobile和password</p>
+<p>3.el-input v-毛豆绑定属性</p>
+<p><strong>校验：</strong></p>
+<p>密码用min max控制密码长度，message为输入密码的提示信息，trigger：’blur’为失去焦点</p>
+<p>手机号用函数（validator）校验，封装正则校验方法，导入进登录页面，形参写value，三个形参(rule, value, callback) ，</p>
+<p>封装<strong>登录组件</strong>api/user.js 固定格式 导入import进登录页</p>
+<p>配置baseURL并调用接口 </p>
+<p><strong>2.Token存储</strong></p>
+<p>1.在store-modules创建了一个user.js文件 用来存储Token</p>
+<p>2.在state里定义一个token:getToken() || ‘’，    // 意思是先读取，读取不到就是空</p>
+<p>在Mutation中定义存储Token，删除Token的方法</p>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210905001848032.png" srcset="/img/loading.gif" lazyload alt="image-20210905001848032"></p>
+<p>3.存储Token到Vuex，步骤首先返回登录的Vue文件，然后使用this.$store.commit(‘user/updateToken’,res)</p>
+<p>​      //形参：模块名/方法名，res</p>
+<p>4.<strong>持久化存储Token</strong>   js-cookie插件</p>
+<ul>
+<li>设置TokenKey键                                                                                                                                     </li>
+<li>Vuex的Mutation里加代码，本地存一份，setToken(token)</li>
+<li>导入存储和删除的import</li>
+<li>添加本地删除的代码，removeToken()</li>
+<li>存完以后，加跳转首页逻辑，this.$router.replace(‘/‘)</li>
+</ul>
+<p>5.Token权限拦截（router.beforeEach），有Token调回首页，没有Token调回登录页</p>
+<ul>
+<li>创建permission.js</li>
+<li>导入路由实例 导入vuex实例</li>
+<li>创建白名单数组</li>
+<li>添加前门保安，根据是否有Token拦截页面的访问，router.beforeEach((to,from,next) =&gt;{</li>
+<li>if else 判断是否有Token</li>
+<li>})</li>
+</ul>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210905213656666.png" srcset="/img/loading.gif" lazyload alt="image-20210905213656666"></p>
+<p>登出功能：</p>
+<ul>
+<li>提示用户是否要登出（使用饿了么messagebox弹框组件）</li>
+<li>清除Token，清除用户信息</li>
+<li>跳转到登录页</li>
+</ul>
+<p><strong>Token失效</strong>功能：</p>
+<ul>
+<li>访问某个接口时，后端检查当前token是否失效</li>
+<li>如果token已经失效，返给前端的是<strong>http状态码401</strong></li>
+<li>前端通过<strong>返回拦截器的错误回调</strong>捕获401，进行登出操作</li>
+</ul>
+<p>响应拦截器- request.js-  优化登录，处理请求错误，解构赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js">response =&gt; &#123;<br>    <span class="hljs-comment">// 请求成功进入这里</span><br>   <span class="hljs-keyword">const</span> &#123; success, data, message &#125; = response.data<br>   <span class="hljs-comment">// 处理请求的成功或者失败</span><br>   <span class="hljs-keyword">if</span> (success) &#123;<br>       <span class="hljs-comment">// 成功就把页面需要的data返回</span><br>     <span class="hljs-keyword">return</span> data<br>   &#125; <span class="hljs-keyword">else</span> &#123;<br>     <span class="hljs-comment">// 请求失败</span><br>     Message(&#123;<br>       message,<br>       <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;error&#x27;</span>,<br>       <span class="hljs-attr">duration</span>: <span class="hljs-number">4</span> * <span class="hljs-number">1000</span><br>     &#125;)<br>     <span class="hljs-comment">// 错误的话中断请求</span><br>     <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(message))<br>   &#125;<br></code></pre></td></tr></table></figure>
+
+<p>持久化存储token：判断是不是401，如果是401的话，清除token，强制跳转登录页，重新登陆获取token</p>
+<p>动态路由和静态路由都有一个数组，需要使用展开运算符对这两个数组进行合并。</p>
+<p>el-card 可以作为容器组件div进行使用</p>
+<p>:default-expand-all=”true”  默认开启所有tree组件 默认展开所有</p>
+<p><strong>scss SCSS样式穿透–深度作用选择符 =》 ::v-deep</strong></p>
+<h4 id="35-原型链"><a href="#35-原型链" class="headerlink" title="35.原型链"></a><strong>35.原型链</strong></h4><ul>
+<li>prototype 原型</li>
+<li>_ _photo原型链</li>
+</ul>
+<p>当访问一个对象的某个属性的时候，会先在这个对象本身的属性上找，如果没有找到，会去这个属性的__proto属性上找，即这个构造函数的prototype，如果还没有找到，会继续在–proto上查找，直到最顶层，找不到即为undefined。这样一层一层往上找，仿佛是一条链子穿起来，就叫做原型链</p>
+<h4 id="36-作用域链"><a href="#36-作用域链" class="headerlink" title="36.作用域链"></a><strong>36.作用域链</strong></h4><p>变量取值会到创建这个变量的函数作用域中取值，如果找不到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链</p>
+<h4 id="37-原型链和作用域链的区别？"><a href="#37-原型链和作用域链的区别？" class="headerlink" title="37.原型链和作用域链的区别？"></a><strong>37.原型链和作用域链的区别？</strong></h4><p>作用域是对变量而言，原型链是对于对象的属性而言</p>
+<p>作用域链的最顶层是window，原型链的最顶层是object </p>
+<h4 id="38-Vue的双向绑定的原理"><a href="#38-Vue的双向绑定的原理" class="headerlink" title="38.Vue的双向绑定的原理"></a><strong>38.Vue的双向绑定的原理</strong></h4><p>　Vue是采用<strong>数据劫持</strong>结合<strong>发布订阅</strong>模式的方式，通过<code>Object.defineProperty()</code>来劫持各个属性的<code>setter</code>，<code>getter</code>，</p>
+<p>​    并在数据变动时发布消息给订阅者，触发相应的监听回调。</p>
+<h4 id="39-事件循环机制"><a href="#39-事件循环机制" class="headerlink" title="39.事件循环机制"></a><strong>39.事件循环机制</strong></h4><p>JS执行是单线程的，代码会一行一行往下执行，在JS执行时，只要遇到了异步的函数，不会停留，会将异步函数交给浏览器。</p>
+<p>同步代码执行完了执行异步，异步代码又分为宏任务和微任务</p>
+<p>宏任务有:setTimeout、setInterval、script(整体代码)等</p>
+<p>微任务有：Promise async await</p>
+<h4 id="40-重绘和回流"><a href="#40-重绘和回流" class="headerlink" title="40.重绘和回流"></a><strong>40.重绘和回流</strong></h4><p>重绘：比如修改了网页的背景颜色，只影响了元素的外观，不影响布局的叫做重绘</p>
+<p>回流：当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流</p>
+<p>区别：重绘不一定会导致回流，但是回流一定会重绘</p>
+<ul>
+<li>重排是指部分渲染树（或者整个渲染树）需要重新分析并且节点尺寸需要重新计算；</li>
+<li>重绘是由于节点的几何属性发生改变或者由于样式发生改变，例如改变元素背景色时，屏幕上的部分内容需要更新。</li>
+</ul>
+<h4 id="41-解决跨域的方式有哪些"><a href="#41-解决跨域的方式有哪些" class="headerlink" title="41.解决跨域的方式有哪些"></a>41.解决跨域的方式有哪些</h4><p>跨域只发生在浏览器中，我一般使用proxy代理进行跨域，里边有一个target属性，直接填接口地址就可以了</p>
+<p>JSONP 只支持GET请求，不支持POST请求。</p>
+<h4 id="42-vue-router怎样实现页面跳转"><a href="#42-vue-router怎样实现页面跳转" class="headerlink" title="42.vue-router怎样实现页面跳转"></a><strong>42.vue-router怎样实现页面跳转</strong></h4><p>实现Vue路由跳转有两种模式，一种是哈希模式，一种是history 模式</p>
+<p>这两个模式在URL地址栏的表现不同，其中最大的区别就是哈希模式会在后边带一个#号，history 模式则没有井号。</p>
+<p>哈希模式的兼容性更好，</p>
+<h4 id="43-解释一下JS的同源策略"><a href="#43-解释一下JS的同源策略" class="headerlink" title="43.解释一下JS的同源策略"></a>43.解释一下JS的同源策略</h4><p>协议，域名，端口号相同，同源策略是一种安全协议。</p>
+<h4 id="44-如何实现数组的去重"><a href="#44-如何实现数组的去重" class="headerlink" title="44.如何实现数组的去重"></a>44.如何实现数组的去重</h4><p>我一般使用ES6里边的new Set实现数组去重。</p>
+<p>let 一个新数组传入旧数组，log新数组即可得到去重的结果。</p>
+<ul>
+<li>双层循环</li>
+<li>IndexOf和includes</li>
+<li>排序去重</li>
+<li>Filter方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 通过ES6的new Set进行数组去重：</span><br><br><span class="hljs-comment">// 1. 数字、字符串数组去重</span><br><span class="hljs-keyword">let</span> arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-string">&#x27;1&#x27;</span>];<br><span class="hljs-keyword">let</span> newArr1 = [...new <span class="hljs-built_in">Set</span>(arr1)];<br><span class="hljs-built_in">console</span>.log(newArr1);<br><span class="hljs-comment">// [1, 2, 3, &#x27;1&#x27;]</span><br><br><span class="hljs-comment">// 2. 对象数组去重</span><br><span class="hljs-keyword">let</span> arr2 = [<br>  &#123;<span class="hljs-attr">a</span>: <span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">&#x27;q&#x27;</span>&#125;,<br>  &#123;<span class="hljs-attr">a</span>: <span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">&#x27;q&#x27;</span>&#125;,<br>  &#123;<span class="hljs-attr">a</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">&#x27;e&#x27;</span>&#125;,<br>  &#123;<span class="hljs-attr">a</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">&#x27;e&#x27;</span>&#125;<br>]<br><span class="hljs-keyword">let</span> newArr2 = [...new <span class="hljs-built_in">Set</span>(arr2.map(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> <span class="hljs-built_in">JSON</span>.stringify(e)))].map(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> <span class="hljs-built_in">JSON</span>.parse(e))<br><span class="hljs-built_in">console</span>.log(newArr2);<br><span class="hljs-comment">// [&#123;a: &#x27;1&#x27;, b: &#x27;q&#x27;&#125;, &#123;a: &#x27;2&#x27;, b: &#x27;e&#x27;&#125;]</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="45-说明常见的状态码，并且说明含义"><a href="#45-说明常见的状态码，并且说明含义" class="headerlink" title="45.说明常见的状态码，并且说明含义"></a><strong>45.说明常见的状态码，并且说明含义</strong></h4><p>200 成功</p>
+<p>3XX 一般代表重定向，一般域名的后台设置也有3XX这个状态码</p>
+<p>4XX 一般是请求错误 常见的有401 和 404</p>
+<p>5XX 这个一般就是服务器端发送过来的错误了</p>
+<h4 id="46-对async-await的理解"><a href="#46-对async-await的理解" class="headerlink" title="46.对async/await的理解"></a><strong>46.对async/await的理解</strong></h4><p>异步编程的最高境界就是不关心它是否是异步。async、await很好的解决了这一点，将异步强行转换为同步处理。</p>
+<p>async/await与promise不存在谁代替谁的说法，因为async/await是寄生于Promise，是Generater(占牛瑞特)的语法糖。</p>
+<h4 id="47-ES6新特性"><a href="#47-ES6新特性" class="headerlink" title="47.ES6新特性"></a><strong>47.ES6新特性</strong></h4><p>我简单列举几个吧：let关键字，const关键字，模板字符串，箭头函数，解构赋值，…展开运算符（使用场景：mapstate，map谬忒神），promise对象等等</p>
+<h4 id="48-和-的区别？"><a href="#48-和-的区别？" class="headerlink" title="48.=== 和 ==的区别？"></a><strong>48.=== 和 ==的区别？</strong></h4><p>=== ：不仅需要值相同，数据类型也相同时才能返回true</p>
+<p>== ：两个等号只要值相等就可以，数据类型不同会存在隐式转换</p>
+<h4 id="49-请简述一下Vuex的原理，和使用方法"><a href="#49-请简述一下Vuex的原理，和使用方法" class="headerlink" title="49.请简述一下Vuex的原理，和使用方法"></a><strong>49.请简述一下Vuex的原理，和使用方法</strong></h4><p>Vuex存储，dispatch和commit的区别，dispatch: 含有异步操作，commit：同步操作</p>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>，可以方便的实现组件之间数据的共享</p>
+<p>一般只有，组件之间需要共享的数据，才有必要存到Vuex中，对于组件内的私有数据，依旧存储到组件data中</p>
+<p><strong>调用Vuex有两种方法</strong>，一种是…mapState，一种是this.$store.state(获取数据)，this.$store.commit(‘方法名’,payload) – 修改数据</p>
+<p>this.$store.dispatch(‘方法名’,payload) – 调接口</p>
+<p><strong>State</strong>（store.js），state本质上是一个对象，作用是用来存储全局共享的数据。</p>
+<ul>
+<li>组件访问State中数据的<strong>第一种方式</strong> this.$store.state.全局数据名称</li>
+</ul>
+<p>访问State中数据的<strong>第二种方式</strong>：</p>
+<ul>
+<li>在子组件导入mapstate函数  import {mapState} from ‘vuex’</li>
+<li>将全局数据，映射为当前组件的计算属性</li>
+<li>computed:{</li>
+<li>…mapState([‘count’])</li>
+<li>}</li>
+<li>之后就可以用，插值表达式进行渲染了</li>
+</ul>
+<p><strong>Mutation</strong>（store.js）：专门负责修改State<strong>中的数据</strong></p>
+<ul>
+<li>Mutation的形参，第一个永远是state，第二个形参可以定义变量在commit中用</li>
+<li><strong>this.$store.commit(</strong>‘路径’,第二个形参可以自定义) 进行触发 (也可以说是调用谬忒神的方法)</li>
+</ul>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210912162421077.png" srcset="/img/loading.gif" lazyload alt="image-20210912162421077"></p>
+<p>触发<strong>Mutation</strong>的第二种方式：</p>
+<ul>
+<li>（子组件）从vuex中引入mapMutation</li>
+<li>（子组件）…mapMutations([‘方法名’])</li>
+<li>（子组件）使用this.方法名() 调用</li>
+</ul>
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210912173426616.png" srcset="/img/loading.gif" lazyload alt="image-20210912173426616"></p>
+<p><strong>action</strong> 啊可神 本质上是一个JS函数，专门用来处理Vuex中的异步操作。不能修改数据源</p>
+<ul>
+<li>在action中不能直接修改state中的数据</li>
+<li>要修改必须通过context.commit(‘Mutation中定义的方法’)触发某个谬忒神才行</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js">（store.js）<br><br><span class="hljs-attr">actions</span>:&#123;<br> add异步(context) &#123;<br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span> &#123;<br>	 context.commit(<span class="hljs-string">&#x27;Mutation定义的方法&#x27;</span>)<br>&#125;,<span class="hljs-number">1000</span>)<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>调用action的方法(子组件)</li>
+<li><strong>this.$store.dispatch</strong>(‘add异步名’)  进行触发action</li>
+</ul>
+<p><strong>Getter</strong>本质上是JS函数。作用：它是Vuex中的计算属性，当Store数据源发生变化，Getter的返回值会自动更新。</p>
+<ul>
+<li>使用方法：this.$store.getters.名称</li>
+</ul>
+<p><strong>Module</strong>  猫肘 模块化开发，注册组件用</p>
+<p>键盘敲 Vmod 快速生成VueX 代码 </p>
+<p>namespaced: true 开启Vuex 命名空间</p>
+<p>store.dispatch：含有异步操作，例如向后台提交数据，写法： this.$store.dispatch(‘mutations方法名’,值)</p>
+<p>store.commit：同步操作，写法：this.$store.commit(‘mutations方法名’,值)</p>
+<h4 id="50-简述弹性盒子flex布局及rem布局"><a href="#50-简述弹性盒子flex布局及rem布局" class="headerlink" title="50.简述弹性盒子flex布局及rem布局"></a><strong>50.简述弹性盒子flex布局及rem布局</strong></h4><p>开启flex布局只需在最外层容器设置**display:flex;**即可</p>
+<p>整个网页可以看做是一个flex容器</p>
+<p>里边的子容器可以称之为flex成员</p>
+<p>容器默认存在两根轴，一个水平轴，一个交叉轴</p>
+<p>​    justify-content: center; /* 水平居中 */</p>
+<p>​    align-items: center; /* 垂直居中 */</p>
+<p>Flex是css中一种布局手段，主要用来代替浮动，flex可以使元素具有弹性，让元素可以跟随页面的大小的改变而改变；</p>
+<p>弹性容器和弹性元素</p>
+<p>容器属性有flex-direction，flex-wrap换行，justify-content分配空白</p>
+<p>元素属性有flex-grow伸展系数、flex-shrimk收缩系数、flex-basis基础长度、order排列顺序</p>
+<h4 id="51-nextTick在Vue最新的版本中是微任务。"><a href="#51-nextTick在Vue最新的版本中是微任务。" class="headerlink" title="51.$nextTick在Vue最新的版本中是微任务。"></a><strong>51.$nextTick在Vue最新的版本中是微任务。</strong></h4><h4 id="52-Vue页面强制刷新：this-router-go-0"><a href="#52-Vue页面强制刷新：this-router-go-0" class="headerlink" title="52.Vue页面强制刷新：this.$router.go(0)"></a><strong>52.Vue页面强制刷新：this.$router.go(0)</strong></h4><h4 id="53-解构赋值：把对象中的内容赋值给变量"><a href="#53-解构赋值：把对象中的内容赋值给变量" class="headerlink" title="53.解构赋值：把对象中的内容赋值给变量"></a><strong>53.解构赋值：把对象中的内容赋值给变量</strong></h4><h4 id="54-Vue如何封装一个组件封装组件"><a href="#54-Vue如何封装一个组件封装组件" class="headerlink" title="54.Vue如何封装一个组件封装组件"></a><strong>54.Vue如何封装一个组件封装组件</strong></h4><ol>
+<li>在compoents文件夹中新建一个vue文件（以dialog弹层组件为例）</li>
+<li>在main.js中全局引入，先import再注册到VUE中</li>
+<li>接着就可以在任何页面直接使用自己定义的组件</li>
+</ol>
+<h4 id="55-什么是websocket"><a href="#55-什么是websocket" class="headerlink" title="55.什么是websocket?"></a><strong>55.什么是websocket?</strong></h4><p>websocket是H5的一个新协议，它允许服务端向客户端传递信息，实现浏览器和客户端双工通信</p>
+<h4 id="56-Vue-性能优化"><a href="#56-Vue-性能优化" class="headerlink" title="56.Vue 性能优化"></a>56.Vue 性能优化</h4><ul>
+<li>对象层级不要过深，否则性能就会差</li>
+<li>v-for 遍历必须加 key，key 最好是 id 值，且避免同时使用 v-if</li>
+<li>防止内部泄漏，组件销毁后把全局变量和事件销毁</li>
+<li>图片懒加载</li>
+<li>路由懒加载</li>
+<li>第三方插件的按需引入</li>
+<li>适当采用 keep-alive 缓存组件   keep-alive使用场景: 商品列表页点击商品跳转到商品详情，返回后仍显示原有信息</li>
+<li>防抖、节流运用</li>
+<li>服务端渲染 SSR or 预渲染</li>
+</ul>
+<h4 id="57-Vue组件中的data为什么必须是一个函数"><a href="#57-Vue组件中的data为什么必须是一个函数" class="headerlink" title="57.Vue组件中的data为什么必须是一个函数"></a><strong>57.Vue组件中的data为什么必须是一个函数</strong></h4><p>每一个实例的data属性都是独立的，是一个独立的作用域，不会相互影响</p>
+<p>这都是因为js本身的特性带来的，跟vue本身设计无关</p>
+<h4 id="58-null和undefined的区别"><a href="#58-null和undefined的区别" class="headerlink" title="58.null和undefined的区别"></a>58.null和undefined的区别</h4><p>两等等于true 三等等于false</p>
+<p>Null类型，代表“空值”，代表一个空对象指针</p>
+<p>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。</p>
+<h4 id="59-this指向"><a href="#59-this指向" class="headerlink" title="59.this指向"></a><strong>59.this指向</strong></h4><p>在函数中调用 指向window</p>
+<p>在对象中电泳 this指向这个函数的对象</p>
+<p>在构造函数中指向new的对象</p>
+<p>call apply bind 中 指向第一个参数</p>
+<p>箭头函数没有this 他的this是继承来的</p>
+<p>vue中的this指向：Vue文档里的原话是：在Vue所有的生命周期钩子方法（如created，mounted， updated以及destroyed）里使用this，this指向调用它的Vue实例，即（new Vue）。 </p>
+<h4 id="60-路由守卫（路由钩子）"><a href="#60-路由守卫（路由钩子）" class="headerlink" title="60.路由守卫（路由钩子）"></a><strong>60.路由守卫（路由钩子）</strong></h4><p>全局<strong>前置</strong>守卫 router.beforeEach((to, from, next)=&gt;{</p>
+<p>})</p>
+<p>to 是去哪 from来自哪里</p>
+<p>全局<strong>后置</strong>守卫 router.afterEach()         使用场景：页面访问统计，数据采集</p>
+<p>路由每个对象内的 beforeEnter</p>
+<p>某个组件内的：进入路由 beforeRouteEnter  离开路由 beforeRouteLeave</p>
+<p>三个形参 to from next </p>
+<p>to要进入的路由 from从哪里来的 是否可以访问这个页面</p>
+<p>next() 代表什么页面都能访问</p>
+<p>怎么判断用户是否可以登录呢？=》通过登录接口 获取的token做判断</p>
+<p><strong>全局前置守卫 router.beforeEach() 拦截实战</strong></p>
+<p>需求：我的页面，需要登录才能访问，其他页面直接放行</p>
+<p>解决：if(to.path === ‘/my’ &amp;&amp; !localStorage.getItem(‘token名称’)) {</p>
+<p>alert(‘请登录’)</p>
+<p>} else {</p>
+<p> next()</p>
+<p>}</p>
+<p>============================================================</p>
+<h4 id="61-块级元素和行内元素"><a href="#61-块级元素和行内元素" class="headerlink" title="61.块级元素和行内元素"></a><strong>61.块级元素和行内元素</strong></h4><p>块级元素独占一行 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>...<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>、<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>行内元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">span，a，img，input <br></code></pre></td></tr></table></figure>
+
+<h4 id="62-Css选择器有哪些，优先级？"><a href="#62-Css选择器有哪些，优先级？" class="headerlink" title="62.Css选择器有哪些，优先级？"></a>62.Css选择器有哪些，优先级？</h4><p>优先级：内联样式 &gt; id选择器 &gt; 类和伪类选择器 &gt; 元素选择器 &gt; 通配选择器</p>
+<p>有哪些：id选择器，类选择器，标签选择器，后代选择器，子代选择器</p>
+<p>优先级：!important &gt; 内联样式 &gt; id选择器 &gt; 类、伪类、属性选择器 &gt; 标签、伪元素选择器</p>
+<h4 id="63-for-in-和-for-of的区别"><a href="#63-for-in-和-for-of的区别" class="headerlink" title="63.for in 和 for of的区别"></a>63.for in 和 for of的区别</h4><p>for…in 循环：只能获得对象的键名，不能获得键值  for…in 循环主要是为了遍历对象而生，不适用于遍历数组</p>
+<p>for…of 循环：允许遍历获得键值 for…of 循环可以用来遍历数组、类数组对象，字符串</p>
+<h4 id="64-element-ui-自定义主题修改"><a href="#64-element-ui-自定义主题修改" class="headerlink" title="64.element-ui 自定义主题修改"></a>64.element-ui 自定义主题修改</h4><p>1.先把主题去饿了么UI官网下载下来</p>
+<p>2.把theme页面放到vue项目里，assest里面</p>
+<p>3.main.js中引入</p>
+<h4 id="65-如何判断js中的数据类型"><a href="#65-如何判断js中的数据类型" class="headerlink" title="65.如何判断js中的数据类型"></a><strong>65.如何判断js中的数据类型</strong></h4><p>1.使用typeof操作符  typeof不适合用于判断是否为数组。当使用typeof判断数组和对象的时候，都会返回object。</p>
+<ol start="2">
+<li>instanceof   instanceof只能用来判断对象和函数，不能用来判断字符串和数字等。判断它是否为字符串和数字时，只会返回false</li>
+<li>prototype  以上三种方法多少都会有一些不能判断的情况。为了保证兼容性，可以通过<strong>Object.prototype.toString</strong>方法，判断某个对象值属于哪种内置类型。（）</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yi0921/p/6183422.html">https://www.cnblogs.com/yi0921/p/6183422.html</a></li>
+</ol>
+<h4 id="66-json和json字符串如何转换"><a href="#66-json和json字符串如何转换" class="headerlink" title="66.json和json字符串如何转换"></a>66.json和json字符串如何转换</h4><p>JavaScript 函数 <strong>eval()</strong> 可用于将 JSON 文本转换为 JavaScript 对象。</p>
+<p>JSON对象转换为字符串 通过<strong>JSON.stringify</strong> 函数转换为字符串 </p>
+<h4 id="67-定位的方式-相对于谁定的"><a href="#67-定位的方式-相对于谁定的" class="headerlink" title="67.定位的方式 相对于谁定的"></a>67.定位的方式 相对于谁定的</h4><p>绝对定位，他是参照浏览器的左上角，配合TOP、RIGHT、BOTTOM、LEFT(下面简称TRBL)进行定位，在没有设定TRBL，默认依据父级的做标原始点为原始点。</p>
+<h4 id="68-var与let、const的区别"><a href="#68-var与let、const的区别" class="headerlink" title="68.var与let、const的区别"></a>68.var与let、const的区别</h4><ul>
+<li>var声明变量存在变量提升，let和const不存在变量提升</li>
+<li>let和const声明形成块作用域</li>
+<li>同一作用域下let和const不能声明同名变量，而var可以</li>
+<li>const只能定义常量</li>
+</ul>
+<h4 id="69-span元素给宽和高之后宽高是多少-给margin之后是多少："><a href="#69-span元素给宽和高之后宽高是多少-给margin之后是多少：" class="headerlink" title="69.span元素给宽和高之后宽高是多少 给margin之后是多少："></a>69.span元素给宽和高之后宽高是多少 给margin之后是多少：</h4><p>span元素属于行内元素，当我们直接设置了宽度和高度的时候，不会生效</p>
+<p>在样式属性中添加display:block 即可生效</p>
+<p>inline-block: 既有inline的同行特性，又有block的宽度和高度特性。</p>
+<h4 id="70-DOM事件流的三个阶段"><a href="#70-DOM事件流的三个阶段" class="headerlink" title="70.DOM事件流的三个阶段"></a>70.DOM事件流的三个阶段</h4><p>捕获阶段：事件从Document节点自上而下向目标节点传播的阶段；</p>
+<p>目标阶段：真正的目标节点正在处理事件的阶段；</p>
+<p>冒泡阶段：事件从目标节点自上而下向Document节点传播的阶段。</p>
+<h4 id="71-盒子垂直水平居中"><a href="#71-盒子垂直水平居中" class="headerlink" title="71.盒子垂直水平居中"></a>71.盒子垂直水平居中</h4><p><strong>宽度和高度已知的情况下</strong></p>
+<p>1.给父元素相对定位<br>给子元素绝对定位<br>left: 50%;top: 50%;<br>margin-left: 负的宽度一半。<br>margin-top: 负的高度一半；</p>
+<p><strong>宽度和高度自己未知的情况下</strong><br>思路：<br>给父盒子相对定位<br>给子盒子绝对定位<br>top、right、bottom、left全为0<br>margin: auto;</p>
+<h4 id="72-JS继承"><a href="#72-JS继承" class="headerlink" title="72.JS继承"></a>72.JS继承</h4><p><strong>组合继承（常用！组合原型链继承和借用构造函数继承）</strong></p>
+<p><strong>寄生组合式继承（常用）</strong></p>
+<p><strong>原型链继承</strong>：让新实例的原型等于父类的实例</p>
+<p><strong>构造函数继承</strong>：用.call()和.apply()将父类构造函数引入子类函数</p>
+<p><strong>class继承</strong></p>
+<h4 id="73-ajax请求的时候get和post方式的区别"><a href="#73-ajax请求的时候get和post方式的区别" class="headerlink" title="73.ajax请求的时候get和post方式的区别"></a>73.ajax请求的时候get和post方式的区别</h4><p>一个在url后面 ，一个放在虚拟载体里面<br>get有大小限制(只能提交少量参数)<br>安全问题 一个加密一个不加密<br>应用不同 ，请求数据和提交数据</p>
+<p>Get</p>
+<ul>
+<li>一般用于获取数据</li>
+<li>基于URL地址传参，所以有个长度限制（一般在8kb），如果超过就会被截掉</li>
+<li>因为get请求基于问号传参容易被劫持，所以相对不安全</li>
+<li>会产生不可控的缓存，POST不会</li>
+</ul>
+<p>Post</p>
+<ul>
+<li>一般用于新增数据</li>
+<li>基于请求传参，理论上没有任何限制（真实项目中会自己做大小限制，防止上传过在信息导致请求迟迟完不成）</li>
+<li>POST请求基于请求主体传参，相对来说不好被劫持，比较安全</li>
+</ul>
+<h4 id="74-没有宽高的盒子水平垂直居中的效果的方法"><a href="#74-没有宽高的盒子水平垂直居中的效果的方法" class="headerlink" title="74.没有宽高的盒子水平垂直居中的效果的方法"></a>74.没有宽高的盒子水平垂直居中的效果的方法</h4><p>方法一、CSS+定位</p>
+<p>让其父元素相对定位，内部元素绝对定位，这里的父元素为body。<br>　　原理：让未定义宽高的图片上下左右距离都为0.然后给一个margin自适应。可以想象成一个盒子，给了四个方向的相同的力，这样就会形成一种相对的均衡力量让其停留在中间位置了。</p>
+<h4 id="75-refs和-nextTick"><a href="#75-refs和-nextTick" class="headerlink" title="75.$refs和$nextTick"></a>75.$refs和$nextTick</h4><p><strong>答案：$refs 获取DOM元素，操作DOM，如果ref绑定到组件上，可以获取当前绑定组件的实例</strong></p>
+<p><strong>$refs使用场景: 1.整体校验，2.父组件调用子组件方法</strong></p>
+<p>//    <h2 ref="语义化名字">.$refs 获取DOM元素</h2></p>
+<p> mounted () {</p>
+<p>  console.log(this.$refs)</p>
+<p>  this.$refs.h2.style.color = ‘red’</p>
+<p> }</p>
+<p><strong>$nextTick 的作用：把回调函数延迟执行，等下次DOM更新完毕之后，再执行回调中的代码</strong> </p>
+<p>好处是：能够保证回调中的代码，能操作到更新完毕后，最新的DOM元素</p>
+<p>使用场景：canvas绘制头像二维码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">     <span class="hljs-built_in">this</span>.$nextTick(<span class="hljs-function">() =&gt;</span> &#123;<br>       QrCode.toCanvas(<span class="hljs-built_in">this</span>.$refs.cas, photoUrl)<br>     &#125;)<br><br><span class="hljs-attr">C</span>:\Users\Administrator\Desktop\后台系统练习\vue-admin-template\src\views\employees\index.vue<br><span class="hljs-comment">// 第166行代码</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="76-如何实现双飞翼（圣杯）布局？"><a href="#76-如何实现双飞翼（圣杯）布局？" class="headerlink" title="76.如何实现双飞翼（圣杯）布局？"></a>76.如何实现双飞翼（圣杯）布局？</h4><p>1、<strong>利用定位实现两侧固定中间自适应</strong> </p>
+<p>1.1）父盒子设置左右 padding 值 </p>
+<p>1.2）给左右盒子的 width 设置父盒子的 padding 值,然后分别定位到 padding 处.</p>
+<p>1.3）中间盒子自适应</p>
+<p>2、<strong>利用 flex 布局实现两侧固定中间自适应</strong> </p>
+<p>2.1）父盒子设置 display:flex; </p>
+<p>2.2）左右盒子设置固定宽高 </p>
+<p>2.3）中间盒子设置 flex:1 ;</p>
+<h4 id="77-父组件使用子组件调用子组件的方法"><a href="#77-父组件使用子组件调用子组件的方法" class="headerlink" title="77.父组件使用子组件调用子组件的方法"></a>77.父组件使用子组件调用子组件的方法</h4><p>父组件标签用ref：<Child ref="dianji" /></p>
+<p>父组件 methods 下 用 this.$refs.dianji.子组件的方法名()           进行调用</p>
+<p>this.$refs.arole.getUserRoles()</p>
+<h4 id="78-子组件调用父组件使用调用父组件的方法"><a href="#78-子组件调用父组件使用调用父组件的方法" class="headerlink" title="78.子组件调用父组件使用调用父组件的方法"></a>78.子组件调用父组件使用调用父组件的方法</h4><p>this.$parent.getList()</p>
+<p>在子组件里用<code>$emit</code>向父组件触发一个事件，父组件监听这个事件就行了，比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 添加成功后刷新列表</span><br><span class="hljs-built_in">this</span>.$emit(<span class="hljs-string">&#x27;update-tree&#x27;</span>)<br><br></code></pre></td></tr></table></figure>
+
+<p>教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zgrkaka/article/details/100528714">https://blog.csdn.net/zgrkaka/article/details/100528714</a></p>
+<h4 id="79-渲染用户频道列表数据"><a href="#79-渲染用户频道列表数据" class="headerlink" title="79.渲染用户频道列表数据"></a>79.渲染用户频道列表数据</h4><p>1.封装接口（homeAPI.js）</p>
+<ul>
+<li>导入 import request from ‘../utils/request’</li>
+</ul>
+<p>2.获取API （homeAPI.js）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> 自定义接口名API = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br><br> <span class="hljs-keyword">return</span> request.get(<span class="hljs-string">&#x27;/v1_0/user/channels&#x27;</span>)<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>3.在需要的地方导入接口(home.vue)</p>
+<p>import { getUserChannelsAPI } from ‘./api/homeApi’</p>
+<p>4.vue文件中封装方法(methods)，调用接口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> 方法名 () &#123;<br>  <span class="hljs-comment">// 调用api接口</span><br>  <span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">data</span>: res &#125; = <span class="hljs-keyword">await</span> 接口名()<br>  <span class="hljs-built_in">console</span>.log(res)<br>  <span class="hljs-comment">// 判断是否请求成功</span><br>  <span class="hljs-keyword">if</span> (res.message === <span class="hljs-string">&#x27;OK&#x27;</span>) &#123;<br>    <span class="hljs-built_in">this</span>.allChannel = res.data.channels<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.allChannel)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>5.判断是不是OK，是的话数据转存到vdata下自定义名字的空数组</p>
+<p>6.给空数组 赋值，写法：this.空数组名 = res.data.channels  (等号右边的数据 去log或者接口文档找)</p>
+<p>7.找到相关标签，使用v-for循环遍历出来 (v-for = 自己起的名 in 数组名 :key=”自己起的名.id”)</p>
+<h4 id="80-axios拦截器（提升用户体验）"><a href="#80-axios拦截器（提升用户体验）" class="headerlink" title="80.axios拦截器（提升用户体验）"></a>80.axios拦截器（提升用户体验）</h4><p><strong>响应拦截器</strong>：函数1。处理的是成功状态（状态码2xx，3xx）的响应</p>
+<p>​                   ：函数2。处理的是失败状态（状态码4xx，5xx）的响应</p>
+<p>使用场景：账号密码错误， token的**<code>统一注入问题</code>**      来自：基础环境搭建</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 添加响应拦截器</span><br>axios.interceptors.response.use(<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>&#123;<br>    <span class="hljs-comment">// 在发送请求之前做些什么</span><br>    <span class="hljs-keyword">return</span> response;<br>  &#125;, <br>    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>&#123;<br>    <span class="hljs-comment">// 对请求错误做些什么</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(error);<br>  &#125;);<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210911112801623.png" srcset="/img/loading.gif" lazyload alt="image-20210911112801623"></p>
+<p><strong>请求拦截器</strong>：作用：可以向header中统一添加token</p>
+<p><strong>发请求的过程：</strong>axios发请求，经过请求拦截器，发送到服务器</p>
+<p>​                           服务器接收到数据后，经过相应拦截器，返回给我们</p>
+<h4 id="81-防抖和节流"><a href="#81-防抖和节流" class="headerlink" title="81.防抖和节流"></a>81.防抖和节流</h4><p>防抖seTtimeout：频繁的触发某个操作时，仅触发最后一次</p>
+<p>节流：单位时间内，重复操作只会触发一次</p>
+<p>这俩的区别：</p>
+<p>防抖函数控制函数在一定时间内的执行次数。防抖意味着 N 秒内函数只会被执行一次（最后一次），如果 N 秒内再次被触发，则重新计算延迟时间；</p>
+<p>节流函数规定一个单位时间，在这个单位时间内最多只能触发一次函数执行，如果这个单位时间内多次触发函数，只能有一次生效。（输入框的模糊查询）</p>
+<h4 id="82-箭头函数和普通函数的区别"><a href="#82-箭头函数和普通函数的区别" class="headerlink" title="82.箭头函数和普通函数的区别"></a>82.箭头函数和普通函数的区别</h4><ul>
+<li>箭头函数语法简单，清晰；</li>
+<li>箭头函数没有prototype，所以本身没this；</li>
+<li>箭头函数不会创建自己的this；</li>
+<li>Call/apply/bind无法改变this指向；</li>
+<li>不能作为构造函数使用；</li>
+</ul>
+<h4 id="83-构造函数和普通函数的区别"><a href="#83-构造函数和普通函数的区别" class="headerlink" title="83.构造函数和普通函数的区别"></a>83.构造函数和普通函数的区别</h4><ul>
+<li>构造用new调用；</li>
+<li>构造内部可以使用this，普通不建议，会指向window；</li>
+<li>构造没有return返回值</li>
+<li>构造首字母大写。</li>
+</ul>
+<h4 id="84-你见过的浏览器内核有哪些？"><a href="#84-你见过的浏览器内核有哪些？" class="headerlink" title="84.你见过的浏览器内核有哪些？"></a>84.你见过的浏览器内核有哪些？</h4><ul>
+<li>IE Trident IE、猎豹安全、360极速浏览器、百度浏览器</li>
+<li>firefox Gecko 可惜这几年已经没落了，打开速度慢、升级频繁、猪一样的队友flash、神一样的对手chrome。</li>
+<li>Safari webkit 从Safari推出之时起，它的渲染引擎就是Webkit，一提到 webkit，首先想到的便是 chrome，可以说，chrome 将 Webkit内核 深入人心，殊不知，Webkit 的鼻祖其实是 Safari。</li>
+<li>chrome Chromium/Blink 在 Chromium 项目中研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。Blink 其实是 WebKit 的分支。大部分国产浏览器最新版都采用Blink内核。二次开发</li>
+<li>Opera blink 现在跟随chrome用blink内核。</li>
+</ul>
+<h4 id="85-内存泄漏的解决方法"><a href="#85-内存泄漏的解决方法" class="headerlink" title="85.内存泄漏的解决方法"></a>85.内存泄漏的解决方法</h4><p>可以用<strong>null</strong>来释放内存，比如是闭包，可以讲闭包的这个函数赋值为null</p>
+<h4 id="86-webpack"><a href="#86-webpack" class="headerlink" title="86.webpack"></a>86.webpack</h4><p><img src="https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/image-20210913235651852.png" srcset="/img/loading.gif" lazyload alt="image-20210913235651852"></p>
+<h5 id="X-小程序"><a href="#X-小程序" class="headerlink" title="X.小程序"></a><strong>X.小程序</strong></h5><p>目录结构：pages-存放页面的文件夹</p>
+<p>utils文件夹 - 工具函数文件夹（例如日期格式）</p>
+<p>app.js - 小程序的入口文件 - App函数创建小程序的实例对象</p>
+<p><strong>app.json - 全局配置文件</strong>：</p>
+<p>apps.wxss - 全局样式文件</p>
+<p>project.config.json - 项目配置文件 - checkSiteMap:false, 取消log警告</p>
+<p>sitemap.json - 小程序页面被搜索的规则</p>
+<p>我叫武昌硕 来自于河北石家庄 在前端行业工作两年了                                                                                     18年出来实习，直接签了合同了</p>
+<p>我之前呢 在石家庄工作 上家公司是在石家庄智凌科技有限公司 担任的前端开发工作 技术栈主要使用Vue全家桶</p>
+<p>在之前的工作当中 做过很多的项目 但是在简历里写的 是我最近做过的项目 比如这个HR后台管理系统 他里边的一些数据的渲染 包括我们的Vuex的存储 登陆功能 权限管理这一块 还有云储存这一块呢 都是有的 像这个后台管理系统 是属于一个各个企业都会用到的后台系统  在项目中遇到最大的问题 就是 退出登陆后 因为路由有缓存 造成下一个登陆人 可以访问上一个登陆人的权限页面</p>
+<p>这个问题呢 我解决的思路是在退出登陆时 调用重置路由的方法 并重置vuex的数据来解决的</p>
+<p>基本我的个人介绍先这么多 ，面试官有什么想问的可以提出来</p>
+<p>公司 1个产品 1个项目经理 2个前端 4个后端  1个测试</p>
+<p>做过后台管理项目，论坛，移动APP项目</p>
+<p>产品给出需求文档，产品原型开会</p>
+<h4 id="87-Vue创建项目步骤"><a href="#87-Vue创建项目步骤" class="headerlink" title="87.Vue创建项目步骤"></a>87.Vue创建项目步骤</h4><ol>
+<li>最后一个 自定义</li>
+<li>勾选 路由 CSS预处理器 Vuex</li>
+<li>2.x</li>
+<li>路由模式 N</li>
+<li>样式选择 LESS</li>
+<li>ESLINT 第三个</li>
+<li>第一个 save</li>
+<li>继续回车</li>
+<li>不保存 N</li>
+</ol>
+<h4 id="88-饿了么UI细节"><a href="#88-饿了么UI细节" class="headerlink" title="88.饿了么UI细节"></a>88.饿了么UI细节</h4><p><strong>layout布局组件</strong></p>
+<ul>
+<li>el-row的  :gutter=”10” 代表的是行间距</li>
+<li>el-row 加 type=”flex” justify=”center” 可以居中</li>
+</ul>
+<p><strong>Table表格组件</strong></p>
+<ul>
+<li><p>el-table的 :data 代表的是数据源</p>
+</li>
+<li><p>el-table-column列组件 列数据由prop=””   绑定</p>
+</li>
+<li><p>渲染自定义内容需要使用作用域插槽</p>
+</li>
+<li><p>格式化性别的方法</p>
+</li>
+</ul>
+<p>结构代码区域：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;el-table-column label=&quot;性别&quot;&gt;<br>  &lt;template #default=&quot;&#123; row &#125;&quot;&gt;<br>    &lt;p&gt;&#123;&#123; geshihuasix(row.six) &#125;&#125;&lt;/p&gt;<br>  &lt;/template&gt;<br>&lt;/el-table-column&gt;<br></code></pre></td></tr></table></figure>
+
+<p>功能代码区域：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vue">methods: &#123;<br>  // 格式化性别<br>  // type 1代表男 2代表女<br>  geshihuasix (type) &#123;<br>    const maps = &#123; 1: &#x27;男&#x27;, 2: &#x27;女&#x27; &#125;<br>    return maps[type]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Page分页组件</strong></p>
+<ul>
+<li><p>一般搭配Table组件进行使用</p>
+</li>
+<li><p>background用来控制小黑框的</p>
+</li>
+<li><p>page-size代表每一页显示多少条数据</p>
+</li>
+<li><p>:total 列表数据的总数</p>
+</li>
+<li><p>自带一个点击事件 @current-change=”pageChange” 可以获取当前页码</p>
+</li>
+<li><p>结构代码区域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;el-pagination<br>  background<br>  layout=&quot;prev, pager, next&quot;<br>  :page-size=&quot;10&quot;<br>  :total=&quot;1000&quot;<br>  @current-change=&quot;pageChange&quot;<br>&gt;<br>&lt;/el-pagination&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>功能结构部分</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">pageChange (niubi) &#123;<br>  <span class="hljs-built_in">console</span>.log(niubi)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Form表单</strong></p>
+</li>
+<li><p>ref代表 组件实例对象</p>
+</li>
+<li><p>表单校验时需要在相应的标签上写prop</p>
+</li>
+<li><p>rules是一个对象，里边的校验规则是数组</p>
+</li>
+<li><p>坑：自定义函数校验规则的时候需要在 复制的 正则规则前 加!</p>
+</li>
+<li><p>```js<br>// 手机号函数校验   可直接复制使用<br>// 可以封装使用  也可以直接复制到data下，return的上边</p>
+<p>// data 部分</p>
+<pre><code>const jiaoyanshouji = (rule, value, callback) =&gt; &#123;
+  // rule代表规则 不常用
+  // value代表 当前表单中输入的值
+  // callback表示回调函数 执行校验成功和失败之后的后续操作
+  if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]&#123;8&#125;$/.test(value)) &#123;
+    return callback(new Error(&#39;手机号格式不对&#39;))
+  &#125; else &#123;
+    callback()
+  &#125;
+&#125;
+</code></pre>
+<p>// rules 里边</p>
+<pre><code>  rules: &#123;
+    shouji: [
+      &#123; validator: jiaoyanshouji, trigger: &#39;blur&#39; &#125;
+    ],
+      
+</code></pre>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs gherkin"><br>- 手机号校验单独封装版本<br><br>- <br><br>  ```js<br>  /<span class="hljs-symbol">*</span><span class="hljs-symbol">*</span><br>   <span class="hljs-symbol">*</span> <span class="hljs-meta">@param</span> &#123;value&#125; 手机号<br>   <span class="hljs-symbol">*</span> <span class="hljs-meta">@returns</span> &#123;Boolean&#125; 校验是否通过<br>   <span class="hljs-symbol">*</span>/<br>  export function validshouji (value) &#123;<br>    return /^(0|<span class="hljs-string">86</span>|<span class="hljs-string">17951)?(13[0-9]</span>|<span class="hljs-string">15[012356789]</span>|<span class="hljs-string">166</span>|<span class="hljs-string">17[3678]</span>|<span class="hljs-string">18[0-9]</span>|<span class="hljs-string">14[57])[0-9]&#123;8&#125;$/.test(value)</span><br><span class="hljs-string">  &#125;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>表单整体校验规则（防止提交空表单），注意！不能重置没有绑定prop的标签 注意：需要先在form标签上绑定 ref=”fm”</p>
+</li>
+<li><p>```js<br>methods: {<br>  onSubmit () {</p>
+<pre><code>  this.$refs.fm.validate(async (isOk) =&gt; &#123;
+    if (isOk) &#123;
+      await addPermission()
+    &#125;
+  &#125;)
+</code></pre>
+<p>}</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs haml"><br><br>**Tree树形组件**<br><br>-<span class="ruby"> 通过<span class="hljs-symbol">:data</span>指定变量，渲染树</span><br><span class="ruby"></span><br>**dialog弹层组件**<br><br>-<span class="ruby"> <span class="hljs-symbol">:before-close</span> 关闭时候的提示  如果想使用它  需要在me里定义方法</span><br><span class="ruby"></span><br>#### 89.SCSS SASS LESS <br><br>-<span class="ruby"> <span class="hljs-number">3.0</span>之前的版本叫 SASS <span class="hljs-number">3.0</span>之后叫SCSS</span><br><span class="ruby"></span><br>#### 90.封装dialog组件<br><br>-<span class="ruby"> 第一步 创建组件.vue</span><br><span class="ruby"></span>-<span class="ruby"> 在组件中 声明vpro</span><br><span class="ruby"></span>-<span class="ruby"> 在父组件 import 导入</span><br><span class="ruby"></span>-<span class="ruby"> 在父组件 vcom 注册组件 </span><br><span class="ruby"></span>-<span class="ruby"> 父组件下 加一个子组件标签 名是 components 注册的名字 首字母大写</span><br><span class="ruby"></span>-<span class="ruby"> 在父组件下 定义data数据  <span class="hljs-symbol">showDialog:</span> <span class="hljs-literal">false</span>,  并在子组件标签加上  <span class="hljs-symbol">:show-dialog=<span class="hljs-string">&quot;showDialog&quot;</span></span> 注意: 冒号右边需要和props定义的值一样 等号右边可以自定义</span><br><span class="ruby"></span>-<span class="ruby"> 父组件 下  子组件标签加上   <span class="hljs-variable">@close</span>-dialog=<span class="hljs-string">&quot;showDialog = false&quot;</span> </span><br><span class="ruby"></span>-<span class="ruby"> 去子组件 定义一个close事件   加上 this.<span class="hljs-variable">$emit</span>(<span class="hljs-string">&#x27;close-dialog&#x27;</span>)  即可关闭弹层  </span><br><span class="ruby"></span><br>#### 91.删除功能一个友好的弹窗提示确认是否要删除<br><br>```js<br>      this.$confirm(&#x27;您确认删除吗？&#x27;)<br>        .then(_ =&gt; &#123;<br>          this.tableData.splice(i, 1)<br>        &#125;)<br>        .catch(_ =&gt; &#123; &#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="92-代码分析"><a href="#92-代码分析" class="headerlink" title="92.代码分析"></a>92.代码分析</h4><p>reque.js =》封装axios的地方 拦截器也在里边</p>
+<h4 id="93-Vscode中的Git使用"><a href="#93-Vscode中的Git使用" class="headerlink" title="93.Vscode中的Git使用"></a>93.Vscode中的Git使用</h4><ul>
+<li>创建新分支 =》 点击左下角分支，点击正在创建新分支 回车 ，点击云，上传</li>
+</ul>
+<h4 id="94-vuex中mutation和action的详细区别"><a href="#94-vuex中mutation和action的详细区别" class="headerlink" title="94.vuex中mutation和action的详细区别"></a>94.vuex中mutation和action的详细区别</h4><ul>
+<li>妙忒神：专注于修改State，理论上是修改State的唯一途径。</li>
+<li>Action：业务代码、异步请求。</li>
+<li>Mutation：必须同步执行。</li>
+<li>Action：可以异步，但不能直接操作State。</li>
+</ul>
+<h4 id="95-饿了么UI的坑"><a href="#95-饿了么UI的坑" class="headerlink" title="95.饿了么UI的坑"></a>95.饿了么UI的坑</h4><p>表单校验</p>
+<p>trigger类型为blur的功能是文本框失去焦点才会触发<br>trigger类型为change的功能是文本框在输入内容时触发<br>trigger类型也可以同时使用blur和change，功能结合上面两个的功能</p>
+<p>同时需要在对应标签上绑定 prop=”introduce校验名称不用加form点”</p>
+<p>====</p>
+<p>Select 选择器 下的  </el-option> 的  :label 指的是选项显示的值 value指的是选项选中被保存的值</p>
+<p>调用封装的接口 需要用 {} 花括号  @/</p>
+<p>调用自己封装的组件  不用加括号   ./</p>
+<p><el-tab-pane> 页面标签页组件</p>
+<p>el-table-column 表格组件 加 sortable 开启排序功能 不过是前端假排序 真排序需要借助后端</p>
+<p>el-table   :default-sort = “{prop: ‘date’, order: ‘descending’}” 加到 table最大的标签 也可以进行排序  prop代表当前列数据名，order是指升序还是降序</p>
+<p>el-pagination分页组件的自定义事件：@current-change 分页组件的事件 具体使用方法看下边代码段</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 分页组件的事件</span><br>ChangePage (newPage) &#123;<br>  <span class="hljs-built_in">this</span>.params.page = newPage<br>  <span class="hljs-built_in">this</span>.getList()<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>el-pagination分页组件的   :current-page=”params.page” 代表当前页数   :page-size=”params.size” 代表每页显示多少条数据</p>
+<p>el-pagination分页组件的   :total=”total” 总计多少条数据</p>
+<p>el-pagination 分页组件 加上 layout=”prev, pager, next,sizes”   加上sizes 可以显示出下拉选页框，同时加上 :page-sizes=”[10, 20, 30, 40, 50, 100]” 可以自定义显示多少条内容的选项  和 @size-change 事件一起用 才可以达到联动效果</p>
+<p>el-pagination坑：:page-sizes在用的时候 data定义的size数据，必须得是 :page-sizes=[] 数组里有的 如果没有 可能会 显示错误</p>
+<p> this.$confirm(‘确认删除吗’, ‘提示的标题’)    ==  删除消息提示框</p>
+<p>关闭弹层时，手动清空表单，清除校验状态  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 关闭弹层的方法</span><br>close () &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;&#x27;</span>)<br>  <span class="hljs-comment">// 手动清空表单</span><br>  <span class="hljs-built_in">this</span>.roleForm = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>    <span class="hljs-attr">description</span>: <span class="hljs-string">&#x27;&#x27;</span><br>  &#125;<br>  <span class="hljs-comment">// 移除校验</span><br>  <span class="hljs-built_in">this</span>.$refs.roleForm.resetFields()<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+
+
+<p>Table组件一般配合Pagination 分页组件 来进行使用</p>
+<p>坑：自己封装dialog组件，一定要首字母大写驼峰命名，否则不生效</p>
+<p>el-form 的 :model 是用来绑定整个数据对象的  :rules 是用来定义校验规则的  </p>
+<p>el-option 的 :label=””指的是要显示的值</p>
+<p>el-tree的 node-click 是 节点被点击时的回调</p>
+<ul>
+<li>:data 是绑数据的</li>
+<li>:props</li>
+<li>show-checkbox 开启选择框对钩</li>
+<li>default-expand-all  默认展开所有列表</li>
+<li>check-strictly 关闭父子关联的对钩</li>
+<li>node-key=”id” 选中时绑定的数据字段 必传属性</li>
+<li>树形数据回显  ：  this.$refs.ref绑的值.setCheckedKeys(res.permIds)    this.$refs.treePoints.setCheckedKeys(res.permIds) 想用这个方法 进行数据回填 必须得有  node-key=”id” 和 ref=”treePoints”  两者缺一不可</li>
+</ul>
+<p>枚举格式化，数据字典使用 =》 在\后台系统练习\vue-admin-template\src\views\employees\index.vue里 26 27 行</p>
+<p>script-loader 插件  js懒加载</p>
+<p>.sync 语法糖   </p>
+<p> 整体校验需要在 el-form 大元素上加 ref=”fm”</p>
+<p>el-uplode组件 </p>
+<ul>
+<li><p>action属性-后台上传地址      </p>
+</li>
+<li><p>:on-success=”handleAvatarSuccess” 上传成功会执行  </p>
+</li>
+<li><p>:show-file-list=”false” 是否显示上传完图片</p>
+</li>
+<li><p>:http-request 自己发请求上传</p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/04/JS%E7%BA%A2%E5%AE%9D%E4%B9%A6%EF%BC%88%E4%B8%80%EF%BC%89Array/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JS红宝书（一）Array</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/04/%E6%97%B6%E9%97%B4%E8%B0%83%E5%BA%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">时间笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://wushuo.top" target="_blank" rel="nofollow noopener"><span>Wucs</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/" target="_blank" rel="nofollow noopener"><span>GitHub</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
