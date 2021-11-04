@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="01-人资项目总结01-登陆模块1. 如何实现​    首先使用 vue-element-admin 的 login 登陆模块, 来进行二开, 使用 eml 提供的 表单验证功能进行表单校验, 封装登陆接口, 在 vuex 中定义 user 模块, 存储 token 信息, 在 actions 中定义登陆方法调用接口, 获取token, 并存在 state 中. 在 表单验证通过后, dispat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人资总结">
+<meta property="og:url" content="http://example.com/2021/08/31/%E4%BA%BA%E8%B5%84%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="人生若只如初见 | WuChangShuo">
+<meta property="og:description" content="01-人资项目总结01-登陆模块1. 如何实现​    首先使用 vue-element-admin 的 login 登陆模块, 来进行二开, 使用 eml 提供的 表单验证功能进行表单校验, 封装登陆接口, 在 vuex 中定义 user 模块, 存储 token 信息, 在 actions 中定义登陆方法调用接口, 获取token, 并存在 state 中. 在 表单验证通过后, dispat">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-31T03:58:09.000Z">
+<meta property="article:modified_time" content="2021-09-07T15:10:32.703Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>人资总结 - 人生若只如初见 | WuChangShuo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://wushuo1031.oss-cn-beijing.aliyuncs.com/img/guimie.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="人资总结">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-31 11:58" pubdate>
+        2021年8月31日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">人资总结</h1>
+            
+            <div class="markdown-body">
+              <h1 id="01-人资项目总结"><a href="#01-人资项目总结" class="headerlink" title="01-人资项目总结"></a>01-人资项目总结</h1><h3 id="01-登陆模块"><a href="#01-登陆模块" class="headerlink" title="01-登陆模块"></a>01-登陆模块</h3><h4 id="1-如何实现"><a href="#1-如何实现" class="headerlink" title="1. 如何实现"></a>1. 如何实现</h4><p>​    首先使用 vue-element-admin 的 login 登陆模块, 来进行二开, 使用 eml 提供的 表单验证功能进行表单校验, 封装登陆接口, 在 vuex 中定义 user 模块, 存储 token 信息, 在 actions 中定义登陆方法调用接口, 获取token, 并存在 state 中. 在 表单验证通过后, dispatch 调用登陆方法, 存储token, 并使用 localstorage 本地持久化存储. 之后在请求拦截器中 统一注入. 后续完成页面的访问控制, (在路由前置守卫中判断是否有 token, 然后在判断是否为登录页, 若是则跳转主页; 若不是, 则放行. 若没有 token, 则判断是否为白名单页(/login, /404), 是则放行, 不是则跳转登录).与 token 失效处理 ( 在响应拦截器中错误回调处, 进行 状态码 401 的判断, 如果401 则清除token, 和调回登录页, 并抛出错误信息 )</p>
+<h4 id="2-技术难点"><a href="#2-技术难点" class="headerlink" title="2.技术难点"></a>2.技术难点</h4><ol>
+<li>处理某些页面多个请求多次401重复跳转问题，造成重新登录后不能正确跳转到上次访问页面问题<br>if (router.currentRoute.path === ‘/login’) return</li>
+</ol>
+<h3 id="02-组织架构"><a href="#02-组织架构" class="headerlink" title="02-组织架构"></a>02-组织架构</h3><p>​    该模块是将后台返回的数据, 以树状图的形式展示出来. 主要使用了 elm 的 el-card,嵌套 el-tree 实现. 我们需要根据后台返回的数据, 来定义一个公共的格式化数据的方法: 定义一个空数组, 存放处理的数据, 循环返回的数据,定义一个 <em>部门 ID 作为 key, 部门数据为值</em> 的关系. 继续遍历返回的数据, 将 pid 作为键, 在 map 中查找, 并返回. 如果返回 undefined 则 为顶层部门, 直接 push到 空数组中, 如果有值 则为子部门, push 到 空数组中的 子目录下.  之后在组建中调用方法渲染到模板即可.</p>
+<p>​    之后完成了 新增, 修改, 删除, 的功能. 点击新增 / 编辑 进入 el-dialog 弹层, 弹层做简单的校验,根据表单是否有id 判断是 新增还是 修改的操作, 调用接口完成相应功能. </p>
+<p>​    编辑回填功能: 在父组件中 使用 $refs 获取 子组件中的方法, 调用回填</p>
+<h3 id="03-权限管理"><a href="#03-权限管理" class="headerlink" title="03-权限管理"></a>03-权限管理</h3><p>​    权限管理, 使用了 RBAC 权限设计理念, 即:  1. 给用户分配角色  2. 给角色分配权限点 , 他的出现 解决了:  1. 权限点直接赋予某个账号   2. 相同的权限需要重复赋予  他的优点: 1. 更加高效  2. 复用: 一个角色可以分配给多个用户</p>
+<p>​    权限管理即为:控制动态路由实现按照角色登录获取到对应的可访问的页面, 与根据角色的不同设置不同的操作按钮权限</p>
+<p>​    <strong>首先实现控制动态路由:</strong> 1. 在 路由控制的页面中, 只留下 静态路由, 动态路由, 根据权限点的数据控制 2. 获取登录人的权限点数据, 首先在 vuex user模块下 将菜单的权限点数据以 return 形式返回,  并在路由前置导航守卫中获取  3. 将 动态路由导出 并 按需导入到 控制路由的 permission 下,  使用 array.filter + includes 来, 根据每一个动态路由的第一个子路由的名字, 来过滤当前角色权限路由点, 4. 使用 路由的方法 router.addRoutes 添加动态路由</p>
+<p>​    <strong>再实现控制操作按钮:</strong> 1. 使用mixin或原型定义全局公共的权限点检查方法, 定义检查页面下的功能点 方法, 传入 权限点 point, 通过 返回一个 includes 方法, 来判断 该权限点 是否在, 权限点数组中.  2. 在全局中导入 mixin 方法 使用 Vue.mixin() 全局混入  3. 使用方法  到具体需要控制的页面，在页面的功能按钮上，使用v-if=”调用混入检测方法(‘传入代表这个功能的权限点标识字符串’)”   检查到返回true显示按钮，相反不显示</p>
+<h4 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理:"></a>问题处理:</h4><p><strong>1. 刷新页面后, 路由出现 404?</strong></p>
+<p>将 router/index 下的 404 路由 删掉, 之后合并到动态路由的后边</p>
+<p><strong>2. 动态加完, 路由菜单不显示?</strong></p>
+<p>this.$router.options.routers 只能获取静态路由,不是响应式的, 所以里面有了数据也不会反应到视图中, 所以需要全局响应式的数据 —–vuex</p>
+<p>新建委会公共布局左侧菜单数据 vuex 模块, 并在权限控制下, commit 调用 存储菜单数据的 mutation, 并传入 可访问的动态路由. 之后在 sidebar 下 改造 , 调用 vuex 中存菜单的 store 来渲染菜单</p>
+<p><strong>3. 在退出登录后, 因为路由有缓存, 造成下一个登录人可以访问上一个登录人的权限页面</strong>?</p>
+<p>在 退出登录/ 401时 调用 重置路由的方法, 并重置菜单 vuex 数据 (会重新复用工程函数, 复用其创造一个新的实例)</p>
+<p><strong>4. 退出登录时重置用户数据，会响应式刷新，执行checkPermission获取数据异常</strong></p>
+<p>解决方法: 使用 ES10的  ‘ ? ‘   或 if判断, 如果有 roles 在 return<br>return userInfo.roles?.points.includes(point) </p>
+<h3 id="04-员工管理"><a href="#04-员工管理" class="headerlink" title="04-员工管理"></a>04-员工管理</h3><p>​    该模块除了列表的渲染, 还有导入导出, 新增, 查看, 删除员工, 分配角色等功能</p>
+<p>​    导入功能实现; 使用的是基于vue-element-admin中的现成方案 , 依赖 第三方xlsx包, 点击<code>excel导入</code>按钮，弹出导入功能的页面, 选择准备好要导入的excel表格文件，.经过数据格式化以后, 传入接口 批量导入</p>
+<p>​    导出功能实现; 点击导出excel 功能, 点击导出 excel 按钮后 导出一份 excel 文件. 导出功能也是基于vue-element-admin中的现成方案, 并下载相关依赖包 xlsx, file-saver,  script-loader. 将数据处理成二维数组, 传入导出的方法后, 调用导出方法, 即可完成功能</p>
+<p>​    查看功能: 点击查看后, 通过路由跳转至详情页面,利用 el-tab,组件,可以切换 多个标签页. 其中封装了用户名, 部门数据, 员工头像等修改内容</p>
+<h3 id="00-另外"><a href="#00-另外" class="headerlink" title="00-另外"></a>00-另外</h3><h4 id="1-Vue-Cli配置跨域请求"><a href="#1-Vue-Cli配置跨域请求" class="headerlink" title="1. Vue-Cli配置跨域请求"></a>1. Vue-Cli配置跨域请求</h4><p>在**<code>vue.config.js</code>**, 中的 DevServe 对象中的配置 跨域请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js">proxy: &#123;<br>  <span class="hljs-comment">// 当我们的本地的请求 有/api的时候，就会代理我们的请求地址向另外一个服务器发出请求</span><br>  <span class="hljs-string">&#x27;/api&#x27;</span>: &#123;<br>    <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;http://www.itcbc.com:3000&#x27;</span>, <span class="hljs-comment">// 跨域请求的地址</span><br>    <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// 只有这个值为true的情况下 才表示开启跨域(默认true)</span><br>    <span class="hljs-comment">// 路径重写</span><br>    <span class="hljs-comment">// 如果 真实后台没有api前缀情况 则 需要加以下属性来将 /api 重置为空</span><br>    <span class="hljs-comment">// pathRewrite: &#123;</span><br>    <span class="hljs-comment">//   &#x27;^/api&#x27;: &#x27;&#x27;</span><br>    <span class="hljs-comment">// &#125;</span><br>  &#125;<br>&#125;<br>之后 修改 baseURL 中的地址, 改为 /api<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-elm-组件库-分页删除-bug"><a href="#2-elm-组件库-分页删除-bug" class="headerlink" title="2. elm 组件库 分页删除 bug"></a>2. elm 组件库 分页删除 bug</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 组件库bug: 处理最后一页数据全部删除完成后列表页码正确, 但数据显示错误问题 (刷新列表使用的是上次的页码)</span><br><span class="hljs-comment"> * 解决: 解决页码错误问题, 使用正确页码发送请求</span><br><span class="hljs-comment"> * 例子: 总共 8 页数据, 把第 8 页数据全删除后还剩 7 页</span><br><span class="hljs-comment"> * 步骤: 1. 重新计算页码 =&gt; 总条数 / 每页条数 = 页码</span><br><span class="hljs-comment"> *      2. 和之前的页码做对比 =&gt; 条件: 之前的页码 &gt; 重新计算页码 =&gt; 修正页码</span><br><span class="hljs-comment"> */</span><br><span class="hljs-comment">// 纠正页码错误: 因为上边已经删除了一条数据 所以总条数要减 1</span><br><span class="hljs-keyword">const</span> newPage = <span class="hljs-built_in">Math</span>.ceil((<span class="hljs-built_in">this</span>.total - <span class="hljs-number">1</span>) / <span class="hljs-built_in">this</span>.params.size)<br><span class="hljs-comment">// 页码 &gt; 0 ( 默认页码最小是1 )</span><br><span class="hljs-keyword">if</span> (newPage &gt; <span class="hljs-number">0</span>) &#123;<br>  <span class="hljs-comment">// 纠正页码</span><br>  <span class="hljs-built_in">this</span>.params.page = <span class="hljs-built_in">this</span>.params.page &gt; newPage ? newPage : <span class="hljs-built_in">this</span>.params.page<br>&#125;<br><span class="hljs-built_in">this</span>.getList()<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-自定义指令-处理异常图片"><a href="#3-自定义指令-处理异常图片" class="headerlink" title="3. 自定义指令-处理异常图片"></a>3. 自定义指令-处理异常图片</h4><p>当图片显示破图的时候：通过自定义指令解决  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1. 在 src/directives/index.js下注册自定义指令</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> imgError = &#123;<br>  inserted (dom, options) &#123;<br>    <span class="hljs-built_in">console</span>.log(dom, options)<br>    <span class="hljs-comment">// 注册图片加载失败事件 onerror</span><br>    dom.onerror = <span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-comment">// 显示默认图片</span><br>      dom.src = options.value<br>    &#125;<br>  &#125;<br>&#125;<br><span class="hljs-comment">// 2. 在main.js中完成自定义指令全局注册</span><br><span class="hljs-built_in">Object</span>.keys(directives).forEach(<span class="hljs-function"><span class="hljs-params">dname</span> =&gt;</span> &#123;<br>  Vue.directive(dname, directives[dname])<br>&#125;)<br><span class="hljs-comment">// 3. 指令注册成功就可以在navbar.vue中直接使用  </span><br>&lt;img v-imgError=<span class="hljs-string">&quot;defaultTx&quot;</span> :src=<span class="hljs-string">&quot;avatar&quot;</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;user-avatar&quot;</span> /&gt;<br>data () &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-comment">// 默认头像 ( 图片加载失败显示该图片 ) ~~使用了commonjs的导入语法</span><br>      <span class="hljs-attr">defaultTx</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@/assets/common/bigUserHeader.png&#x27;</span>)<br>    &#125;  &#125;,<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-饿了么组件库使用总结"><a href="#4-饿了么组件库使用总结" class="headerlink" title="4. 饿了么组件库使用总结:"></a>4. 饿了么组件库使用总结:</h4><p>1.安装</p>
+<p>2.在main.js中导入 （两个）// 引入组件库的功能和样式</p>
+<p>import ElementUI from ‘element-ui’  ;    import ‘element-ui/lib/theme-chalk/index.css’</p>
+<p>3.注册    Vue.use(ElementUI)</p>
+<h4 id="5-组件库使用的四要素："><a href="#5-组件库使用的四要素：" class="headerlink" title="5. 组件库使用的四要素："></a>5. 组件库使用的四要素：</h4><p>1.prop  （父传子）</p>
+<p>2.自定义事件 （子传父）</p>
+<p>3.插槽 （自定义内容） </p>
+<p>4.命令式调用方法  （通过ref获取组件实例上的方法）</p>
+<p>this.$refs.form.validate()全局校验</p>
+<h1 id="02-项目优化"><a href="#02-项目优化" class="headerlink" title="02-项目优化"></a>02-项目优化</h1><h4 id="组件数据懒加载"><a href="#组件数据懒加载" class="headerlink" title="组件数据懒加载:"></a>组件数据懒加载:</h4><p>组件数据懒加载就是组件只有正式进入到视口中，才发起组件内部的ajax请求，否则不请求数据</p>
+<p>如何判断组件进入视口：</p>
+<p>使用@vueuse/core 中的 useIntersectionObserver 来实现监听组件进入可视区域行为，需要配合vue3.0的组合API的方式才能实现</p>
+<p>引入监听是否进入接口，import { useIntersectionObserver } from ‘@vueuse/core’</p>
+<p><strong>通过ref属性获取组件实例</strong>，然后通过判断isIntersecting 是否进入可视区域，如果进入就停止监听放置重复调用，发起请求</p>
+<h4 id="图片懒加载："><a href="#图片懒加载：" class="headerlink" title="图片懒加载："></a>图片懒加载：</h4><p>基于 Vant 的 lazyload 懒加载，可以轻松实现列表中 图片的懒加载效果</p>
+<h4 id="路由懒加载："><a href="#路由懒加载：" class="headerlink" title="路由懒加载："></a>路由懒加载：</h4><p>​    当打包构建应用时，JavaScript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了</p>
+<ol>
+<li>安装babel插件，修改项目根目录下的babel.config.js配置文件，新增plugins节点，实现路由组件按需导入的babel插件，然后再router.index.js中基于 const Foo = () =&gt; import(‘./Foo.vue’)语法，改造每个路由组件的导入方式</li>
+</ol>
+<h4 id="cdn文件配置（cdn加速）"><a href="#cdn文件配置（cdn加速）" class="headerlink" title="cdn文件配置（cdn加速）:"></a>cdn文件配置（cdn加速）:</h4><p>就是把大文件通过cdn方式引入（cdn加速），把排除在外的包通过cdn方式引入</p>
+<p>Webpack / vue.config.js 配置 externals 配置项</p>
+<p>减少应用打包出来的包体积;  加快静态资源的访问;  利用浏览器缓存，不会变动的文件长期缓存</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/01/%E6%87%92%E5%8A%A0%E8%BD%BD/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Vue之图片懒加载</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/14/%E5%89%8D%E7%AB%AF%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/">
+                        <span class="hidden-mobile">前端经典面试题汇总</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
